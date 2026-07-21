@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>마이페이지 — 오늘경리</title>
+<meta name="description" content="월별 내역과 연간 요약을 한눈에 보고, 세무사에게 전달한 이력을 확인하세요.">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body class="page">
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<header class="site-header">
+  <div class="container container--wide site-header__inner">
+    <a class="logo" href="upload.html">오늘<span>경리</span></a>
+    <nav class="site-nav">
+      <a href="upload.html">파일 올리기</a>
+      <button class="site-user" type="button" data-modal-open="profile-modal">
+        <span class="avatar">재</span>
+        <span>김대표 님</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container container--wide dash">
+
+    <!-- 사이드 내비 (데스크탑) -->
+    <aside class="dash__side">
+      <button class="dash-nav" type="button" data-nav="home">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"></path></svg>
+        홈 (마이페이지)
+      </button>
+      <button class="dash-nav" type="button" data-nav="monthly" aria-current="page">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"></path></svg>
+        월별 내역
+      </button>
+      <button class="dash-nav" type="button" data-nav="year">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 14l3-3 3 3 4-5"></path></svg>
+        연간 요약
+      </button>
+      <button class="dash-nav" type="button" data-nav="package">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8"></path></svg>
+        패키지 전달
+      </button>
+    </aside>
+
+    <div>
+
+      <!-- ===== 홈 ===== -->
+      <section class="dash__panel" data-panel="home" hidden>
+        <h1 class="t-section" style="margin-bottom:4px">김대표 님, 이번 달도 잘 정리되고 있어요</h1>
+        <p class="t-sub">2025년 6월 기준</p>
+
+        <div class="money-grid">
+          <div class="money"><p class="money__label">수입</p><p class="money__value t-accent" id="h-income">—</p></div>
+          <div class="money"><p class="money__label">지출</p><p class="money__value" style="color:#8A8178" id="h-expense">—</p></div>
+          <div class="money"><p class="money__label">순이익</p><p class="money__value" id="h-net">—</p></div>
+        </div>
+
+        <h2 style="font-size:15px;font-weight:800;margin-bottom:11px">최근 정리 이력</h2>
+        <ul class="card card--plain" id="h-history"></ul>
+
+        <a class="btn btn--primary btn--block" href="upload.html" style="margin-top:18px">이번 달 파일 올리기</a>
+      </section>
+
+      <!-- ===== 월별 내역 ===== -->
+      <section class="dash__panel" data-panel="monthly">
+        <div class="row row--between row--wrap" style="gap:12px">
+          <div class="month-switch">
+            <button class="month-switch__btn" type="button" id="m-prev" aria-label="이전 달">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+            </button>
+            <h1 class="month-switch__label" id="m-label">2025년 5월</h1>
+            <button class="month-switch__btn" type="button" id="m-next" aria-label="다음 달">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+            </button>
+          </div>
+
+          <div class="segment" id="m-view" role="tablist" aria-label="보기 방식">
+            <button class="segment__btn" role="tab" aria-selected="true"  data-value="daily">일자별</button>
+            <button class="segment__btn" role="tab" aria-selected="false" data-value="monthly">분류별</button>
+          </div>
+        </div>
+
+        <div class="money-grid">
+          <div class="money"><p class="money__label">수입</p><p class="money__value t-accent" id="m-income">—</p></div>
+          <div class="money"><p class="money__label">지출</p><p class="money__value" style="color:#8A8178" id="m-expense">—</p></div>
+          <div class="money"><p class="money__label">순이익</p><p class="money__value" id="m-net">—</p></div>
+        </div>
+
+        <div class="row row--between" style="margin-bottom:11px">
+          <h2 style="font-size:14px;font-weight:800">거래 내역 <span class="t-fine" id="m-count"></span></h2>
+          <div class="segment" id="m-filter" role="tablist" aria-label="수입 지출 필터">
+            <button class="segment__btn" role="tab" aria-selected="true"  data-value="all">전체</button>
+            <button class="segment__btn" role="tab" aria-selected="false" data-value="income">수입</button>
+            <button class="segment__btn" role="tab" aria-selected="false" data-value="expense">지출</button>
+          </div>
+        </div>
+
+        <div class="tx-list" id="m-body"></div>
+
+        <a class="btn btn--dark btn--block" href="result.html" style="margin-top:18px">
+          이 달 패키지 전달하기
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+      </section>
+
+      <!-- ===== 연간 요약 ===== -->
+      <section class="dash__panel" data-panel="year" hidden>
+        <h1 class="t-section">2025년 연간 요약</h1>
+        <p class="t-sub">자료가 있는 달만 집계했어요</p>
+
+        <div class="money-grid">
+          <div class="money"><p class="money__label">연 수입</p><p class="money__value t-accent" id="y-income">—</p></div>
+          <div class="money"><p class="money__label">연 지출</p><p class="money__value" style="color:#8A8178" id="y-expense">—</p></div>
+          <div class="money"><p class="money__label">연 순이익</p><p class="money__value" id="y-net">—</p></div>
+        </div>
+
+        <div class="card" style="margin-bottom:16px">
+          <div class="row row--between" style="margin-bottom:4px">
+            <h2 style="font-size:14px;font-weight:800">월별 추이</h2>
+            <span class="row t-fine" style="gap:12px">
+              <span class="row" style="gap:5px"><span style="width:9px;height:9px;border-radius:3px;background:var(--accent)"></span>수입</span>
+              <span class="row" style="gap:5px"><span style="width:9px;height:9px;border-radius:3px;background:#D9A441"></span>지출</span>
+            </span>
+          </div>
+          <div class="chart" id="y-chart"></div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table">
+            <caption class="sr-only">2025년 월별 수입·지출·순이익</caption>
+            <thead>
+              <tr><th scope="col">월</th><th scope="col">수입</th><th scope="col">지출</th><th scope="col">순이익</th></tr>
+            </thead>
+            <tbody id="y-table"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== 패키지 전달 ===== -->
+      <section class="dash__panel" data-panel="package" hidden>
+        <h1 class="t-section">패키지 전달</h1>
+        <p class="t-sub">세무사님께 보낸 이력이에요. 언제든 다시 보낼 수 있어요.</p>
+
+        <div class="banner" style="margin:18px 0">
+          <span class="icon-tile" style="background:#fff;border:1px solid #F1DACE">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8"></path></svg>
+          </span>
+          <div class="spacer">
+            <p class="banner__title">이번 달 패키지 만들기</p>
+            <p class="banner__desc">현재 거래 <b id="p-count">—</b>이 정리돼 있어요.</p>
+          </div>
+          <a class="btn btn--primary btn--sm" href="result.html" style="padding:11px 16px">패키지 만들기</a>
+        </div>
+
+        <h2 style="font-size:15px;font-weight:800;margin-bottom:11px">전달 이력</h2>
+        <ul class="card card--plain" id="p-list"></ul>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- 모바일 하단 탭바 -->
+  <nav class="tabbar" aria-label="주요 메뉴">
+    <div class="container tabbar__inner">
+      <button class="tabbar__btn" type="button" data-nav="home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"></path></svg>
+        홈
+      </button>
+      <button class="tabbar__btn" type="button" data-nav="monthly" aria-current="page">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"></path></svg>
+        월별
+      </button>
+      <button class="tabbar__btn" type="button" data-nav="year">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 14l3-3 3 3 4-5"></path></svg>
+        연간
+      </button>
+      <button class="tabbar__btn" type="button" data-nav="package">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8"></path></svg>
+        패키지
+      </button>
+    </div>
+  </nav>
+</main>
+
+<!-- 프로필 모달 -->
+<div class="modal" id="profile-modal" role="dialog" aria-modal="true" aria-labelledby="profile-modal-title" hidden>
+  <div class="modal__panel">
+    <div class="row" style="margin-bottom:18px">
+      <span class="avatar" style="width:44px;height:44px;font-size:16px">재</span>
+      <div>
+        <h2 class="modal__title" id="profile-modal-title">김대표 님</h2>
+        <p class="t-fine">(주)오늘컴퍼니 · 대표</p>
+      </div>
+    </div>
+
+    <div class="stack stack-8">
+      <a class="download-btn" href="signup.html">
+        <span class="spacer"><span class="download-btn__title">계정 정보 수정</span>
+        <span class="download-btn__sub">이름 · 회사명 · 직책</span></span>
+      </a>
+      <a class="download-btn" href="index.html">
+        <span class="spacer"><span class="download-btn__title">로그아웃</span></span>
+      </a>
+      <button class="download-btn" type="button" data-modal-open="leave-modal">
+        <span class="spacer"><span class="download-btn__title" style="color:var(--out)">회원 탈퇴</span>
+        <span class="download-btn__sub">정리 이력이 모두 삭제돼요</span></span>
+      </button>
+    </div>
+
+    <div class="modal__actions">
+      <button class="btn btn--outline" type="button" data-modal-close>닫기</button>
+    </div>
+  </div>
+</div>
+
+<!-- 탈퇴 확인 모달 -->
+<div class="modal" id="leave-modal" role="dialog" aria-modal="true" aria-labelledby="leave-modal-title" hidden>
+  <div class="modal__panel" style="max-width:380px">
+    <h2 class="modal__title" id="leave-modal-title">정말 탈퇴하시겠어요?</h2>
+    <p class="t-sub" style="margin-top:10px">
+      탈퇴하면 지금까지 정리한 월별 내역과 전달 이력이 <b>즉시 삭제</b>되고 되돌릴 수 없어요.
+    </p>
+    <div class="modal__actions">
+      <button class="btn btn--outline" type="button" data-modal-close>취소</button>
+      <button class="btn btn--primary" type="button" id="confirm-leave"
+              style="background:var(--out);box-shadow:none">탈퇴하기</button>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container container--wide site-footer__inner">
+    <div class="site-footer__top">
+      <div>
+        <p class="site-footer__biz-name">주식회사 오늘워크</p>
+        <p class="site-footer__biz-info">
+          대표 이재준&nbsp;&nbsp;|&nbsp;&nbsp;사업자등록번호 612-87-03999<br>
+          서울특별시 강남구 학동로12길 18, 비01호(논현동)
+        </p>
+      </div>
+      <nav class="site-footer__links" aria-label="정책 및 문의">
+        <a href="terms.html">이용약관</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="mailto:albatoday26@gmail.com">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><path d="M3 7l9 6 9-6"></path></svg>
+          고객문의
+        </a>
+      </nav>
+    </div>
+    <p class="site-footer__copy">© <span data-year>2025</span> 오늘워크. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

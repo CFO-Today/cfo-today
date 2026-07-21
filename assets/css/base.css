@@ -1,0 +1,266 @@
+@charset "utf-8";
+/* ==========================================================================
+   오늘경리 — base.css
+   디자인 토큰 · 리셋 · 타이포그래피 · 레이아웃 프리미티브
+   ========================================================================== */
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css");
+
+/* --------------------------------------------------------------------------
+   1. 토큰
+   -------------------------------------------------------------------------- */
+:root {
+  /* 브랜드 */
+  --accent:        #E07856;
+  --accent-strong: #C9603F;
+  --accent-tint:   #FBEDE6;
+  --accent-deep:   #C25B3C;
+
+  /* 텍스트 */
+  --ink:   #2A2420;
+  --body:  #6F665E;
+  --muted: #A39A91;
+  --faint: #C9BFB5;
+
+  /* 배경 */
+  --bg:          #F1ECE7;
+  --surface:     #ffffff;
+  --surface-2:   #FCF9F5;
+  --surface-3:   #FAF6F2;
+  --surface-4:   #FCF8F4;
+  --surface-sunk:#FBF3EF;
+
+  /* 라인 */
+  --line:        #EFE7E0;
+  --line-soft:   #F4EEE8;
+  --line-card:   #EFE2DA;
+  --line-strong: #EBE3DC;
+  --line-input:  #E7DDD4;
+
+  /* 의미색 */
+  --in:        #3E8E63;   /* 수입 · 완료 */
+  --in-tint:   #E7F1EA;
+  --in-ink:    #4F8A6B;
+  --in-line:   #BFE0CB;
+  --out:       #CF4B3A;   /* 지출 */
+  --warn:      #A87B2E;   /* 검토 필요 */
+  --warn-tint: #FBF1E0;
+  --warn-ink:  #B5862E;
+  --warn-line: #EAD6A8;
+  --warn-bg:   #FCF6EF;
+  --warn-edge: #F0DCBE;
+  --warn-deep: #A8651E;
+
+  /* 외부 브랜드 */
+  --kakao:     #FEE500;
+  --kakao-ink: #3C1E1E;
+
+  /* 반경 */
+  --r-xs: 7px;
+  --r-sm: 9px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+  --r-2xl: 24px;
+  --r-pill: 999px;
+
+  /* 그림자 */
+  --sh-card:   0 12px 30px rgba(80, 60, 50, .06);
+  --sh-raised: 0 18px 44px rgba(80, 60, 50, .10);
+  --sh-accent: 0 9px 20px rgba(224, 120, 86, .30);
+  --sh-soft:   0 2px 8px rgba(80, 60, 50, .10);
+
+  /* 레이아웃 */
+  --page-max:  1080px;
+  --prose-max: 760px;
+  --shell-pad: 28px;
+}
+
+/* --------------------------------------------------------------------------
+   2. 리셋
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Pretendard", "Pretendard Variable", -apple-system,
+               BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, p, figure, ul, ol { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+
+img, svg { display: block; max-width: 100%; }
+svg { flex-shrink: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 키보드 사용자에게만 포커스 링 */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. 타이포그래피
+   -------------------------------------------------------------------------- */
+.t-hero {
+  font-size: clamp(23px, 1.2rem + 2.2vw, 38px);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.18;
+}
+.t-title {
+  font-size: clamp(20px, 1rem + 1.4vw, 26px);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.3;
+}
+.t-section {
+  font-size: clamp(19px, 1rem + .6vw, 22px);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.32;
+}
+.t-sub {
+  font-size: 15px;
+  color: var(--body);
+  line-height: 1.65;
+}
+.t-small { font-size: 13px; color: var(--body); }
+.t-fine  { font-size: 11.5px; color: var(--muted); line-height: 1.55; }
+
+.t-muted  { color: var(--muted); }
+.t-body   { color: var(--body); }
+.t-accent { color: var(--accent-strong); }
+.t-in     { color: var(--in); }
+.t-out    { color: var(--out); }
+.t-center { text-align: center; }
+
+b, strong, .t-strong { font-weight: 800; }
+
+/* 로고 */
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+.logo span { color: var(--accent); }
+.logo--lg { font-size: 20px; }
+
+/* --------------------------------------------------------------------------
+   4. 레이아웃 프리미티브
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--shell-pad);
+}
+.container--prose { max-width: var(--prose-max); }
+.container--wide  { max-width: 1240px; }
+
+.stack     { display: flex; flex-direction: column; }
+.stack-8   { gap: 8px; }
+.stack-11  { gap: 11px; }
+.stack-16  { gap: 16px; }
+.stack-22  { gap: 22px; }
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.row--between { justify-content: space-between; }
+.row--center  { justify-content: center; }
+.row--wrap    { flex-wrap: wrap; }
+.row--top     { align-items: flex-start; }
+.spacer       { flex: 1; }
+
+.section { padding-block: clamp(32px, 5vw, 56px); }
+.section--tight { padding-block: clamp(24px, 3.5vw, 36px); }
+.section--surface { background: var(--surface); }
+.section--sunk    { background: var(--surface-4); }
+
+/* 페이지 본문이 짧아도 푸터가 바닥에 붙도록 */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.page > main { flex: 1; }
+
+/* 접근성 */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: absolute;
+  left: 12px; top: -60px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: var(--r-md);
+  background: var(--ink);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  transition: top .18s;
+}
+.skip-link:focus { top: 12px; }
+
+/* --------------------------------------------------------------------------
+   5. 애니메이션
+   -------------------------------------------------------------------------- */
+@keyframes ok-spin    { to { transform: rotate(360deg); } }
+@keyframes ok-pulse   { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+@keyframes ok-sweep   { 0% { left: -42%; } 100% { left: 100%; } }
+@keyframes ok-blink   { 0%, 75%, 100% { opacity: .25; } 38% { opacity: 1; } }
+@keyframes ok-breathe {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(224, 120, 86, .18); }
+  50%      { box-shadow: 0 0 0 14px rgba(224, 120, 86, 0); }
+}
+@keyframes ok-fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}

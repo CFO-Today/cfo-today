@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="3b515997-2f6b-4eb7-9f20-9b87bfe5ed50"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/*
+Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard.
+https://github.com/orioncactus/pretendard
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+*/
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 900;
+	font-display: swap;
+	src: local('Pretendard Black'), url("41ad85f8-fc07-4029-b278-43e159bd06be") format('woff2'), url("a7f3a3ab-2b6e-4bcc-b5d3-f5fc84bb6522") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 800;
+	font-display: swap;
+	src: local('Pretendard ExtraBold'), url("6015d99a-703c-41d9-afe7-c902666b36e7") format('woff2'), url("32464001-ba96-446e-894e-9c3c604f4fa2") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url("66acb141-62c0-4245-a90d-d24a1a270512") format('woff2'), url("ed5e0649-2bd1-41ef-9209-8fb6a9cab38a") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 600;
+	font-display: swap;
+	src: local('Pretendard SemiBold'), url("61cd554c-7144-45dd-95ee-a808124e60c0") format('woff2'), url("d846bae6-ac1c-4122-9c60-87d6f0895bcd") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 500;
+	font-display: swap;
+	src: local('Pretendard Medium'), url("8bccf039-3114-41d7-a860-6706feaaf7c2") format('woff2'), url("9dfdf21a-3887-4985-af83-e37c476ae2fe") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url("0c1f5de1-dca8-45c5-a5a6-79203552543b") format('woff2'), url("84e7040b-7067-49e4-aa54-305f2abdf59c") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 300;
+	font-display: swap;
+	src: local('Pretendard Light'), url("d9b98128-6e1d-46ab-a30c-fe893644c9f8") format('woff2'), url("7300c652-b46e-4c52-8a78-5a8e03e42e08") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 200;
+	font-display: swap;
+	src: local('Pretendard ExtraLight'), url("9e140654-fedc-4a14-98ea-947c7569697b") format('woff2'), url("faa8df4a-8cbd-4881-acb5-628fb047b2f1") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 100;
+	font-display: swap;
+	src: local('Pretendard Thin'), url("7420840c-34f2-4d0e-aae3-76d81b907163") format('woff2'), url("e1e31c2f-09ea-4420-9183-5eafa36b911c") format('woff');
+}
+</style>
+<style>
+  body{margin:0;background:#F1ECE7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  button{cursor:pointer;font-family:inherit}
+</style>
+</helmet>
+
+<div style="--accent:#E07856;--accent-strong:#C9603F;--accent-tint:#FBEDE6;--ink:#2A2420;--body:#6F665E;--muted:#A39A91;--line:#EFE7E0;--in:#3E8E63;min-height:100vh;background:#F1ECE7;font-family:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,sans-serif;color:#2A2420;padding:46px 40px 90px">
+
+  <!-- PAGE HEADER -->
+  <div style="max-width:1300px;margin:0 auto 30px">
+    <div style="display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #EBE0D8;border-radius:999px;padding:6px 14px;font-size:12.5px;font-weight:700;color:var(--accent-strong);margin-bottom:18px">
+      <span style="width:7px;height:7px;border-radius:50%;background:var(--accent)"></span>
+      오늘경리 · 월별 상세 (pg-detail)
+    </div>
+    <h1 style="font-size:30px;font-weight:800;letter-spacing:-.03em;margin:0 0 8px;line-height:1.2">사이드바형 월별 내역 대시보드</h1>
+    <p style="font-size:15px;color:var(--body);margin:0;line-height:1.6">메인과 같은 톤 · 단일안 · 좌측 사이드바 + 메인 영역. 월 이동 / 일별·월별 토글 / 전체·수입·지출 필터 직접 눌러볼 수 있어요.</p>
+  </div>
+
+  <div style="max-width:1300px;margin:0 auto;background:#fff;border-radius:20px;box-shadow:0 22px 55px rgba(80,60,50,.13);border:1px solid #EBE3DC;overflow:hidden;position:relative">
+    <div style="height:42px;background:#FAF6F2;border-bottom:1px solid #F0EAE4;display:flex;align-items:center;padding:0 16px;gap:8px">
+      <div style="display:flex;gap:6px"><span style="width:11px;height:11px;border-radius:50%;background:#F0B6A6"></span><span style="width:11px;height:11px;border-radius:50%;background:#F3D2A0"></span><span style="width:11px;height:11px;border-radius:50%;background:#BFD9C2"></span></div>
+      <div style="flex:1;max-width:300px;margin:0 auto;background:#fff;border:1px solid #EFE7E0;border-radius:8px;font-size:11.5px;color:var(--muted);padding:4px 0;text-align:center">cfotoday.kr/my/2025/05</div>
+    </div>
+
+    <div style="display:flex;min-height:680px">
+      <!-- ===== SIDEBAR ===== -->
+      <aside style="width:222px;flex-shrink:0;background:#FCFAF7;border-right:1px solid #F1EBE4;padding:22px 16px;display:flex;flex-direction:column">
+        <div style="font-size:19px;font-weight:800;letter-spacing:-.02em;padding:4px 10px 22px">오늘<span style="color:var(--accent)">경리</span></div>
+        <nav style="display:flex;flex-direction:column;gap:7px">
+          <sc-for list="{{ navItems }}" as="it" hint-placeholder-count="4">
+          <button onclick="{{ it.onClick }}" style="{{ it.style }}"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="{{ it.iconColor }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ it.iconD }}"></path></svg><span style="font-size:14px;font-weight:{{ it.weight }}">{{ it.label }}</span></button>
+          </sc-for>
+        </nav>
+        <div onclick="{{ openProfile }}" style="margin-top:auto;background:#fff;border:1px solid #EADFD6;border-radius:16px;padding:15px 15px 14px;box-shadow:0 6px 16px rgba(80,60,50,.06);cursor:pointer" style-hover="border-color:#E0B9A6">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <span style="width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">재</span>
+            <div style="line-height:1.3;min-width:0">
+              <div style="font-size:14px;font-weight:800;letter-spacing:-.01em">김대표 님</div>
+              <div style="font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">(주)오늘컴퍼니</div>
+            </div>
+          </div>
+          <div style="display:inline-flex;align-items:center;gap:6px;background:#EEF6F0;border:1px solid #CFE6D7;border-radius:999px;padding:5px 10px">
+            <span style="width:6px;height:6px;border-radius:50%;background:#3FB27A"></span>
+            <span style="font-size:11px;font-weight:600;color:#3E8E63">5월까지 세무사 전달 완료</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ===== MAIN ===== -->
+      <main style="flex:1;min-width:0;padding:26px 32px 36px">
+
+        <!-- ===================== 월별 내역 ===================== -->
+        <sc-if value="{{ navMonthly }}" hint-placeholder-val="{{ true }}">
+        <div>
+        <!-- top bar: month nav + view toggle -->
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <button onclick="{{ prevMonth }}" style="width:34px;height:34px;border-radius:10px;background:#fff;border:1px solid #EBE0D8;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F665E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+            <h2 style="font-size:23px;font-weight:800;letter-spacing:-.02em;margin:0;min-width:128px;text-align:center">{{ monthLabel }}</h2>
+            <button onclick="{{ nextMonth }}" style="width:34px;height:34px;border-radius:10px;background:#fff;border:1px solid #EBE0D8;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F665E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></button>
+          </div>
+          <div style="display:flex;gap:4px;background:#F2EAE3;border-radius:11px;padding:4px">
+            <button onclick="{{ setDaily }}" style="{{ dailyStyle }}">일별</button>
+            <button onclick="{{ setMonthly }}" style="{{ monthlyStyle }}">월별</button>
+          </div>
+        </div>
+
+        <!-- summary cards -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px">
+          <div style="background:#fff;border:1px solid #EFE2DA;border-radius:18px;padding:20px 22px">
+            <div style="font-size:13px;color:var(--body);margin-bottom:9px">수입</div>
+            <div style="font-size:27px;font-weight:800;color:var(--accent-strong);letter-spacing:-.02em">{{ incomeStr }}</div>
+          </div>
+          <div style="background:#fff;border:1px solid #EFE2DA;border-radius:18px;padding:20px 22px">
+            <div style="font-size:13px;color:var(--body);margin-bottom:9px">지출</div>
+            <div style="font-size:27px;font-weight:800;color:#8A8178;letter-spacing:-.02em">{{ expenseStr }}</div>
+          </div>
+          <div style="background:linear-gradient(150deg,#FBF3EF,#F8E9E0);border:1px solid #F1DACE;border-radius:18px;padding:20px 22px">
+            <div style="font-size:13px;color:var(--accent-strong);margin-bottom:9px;font-weight:600">순이익</div>
+            <div style="font-size:27px;font-weight:800;color:var(--accent-strong);letter-spacing:-.02em">{{ netStr }}</div>
+          </div>
+        </div>
+
+        <!-- DAILY view -->
+        <sc-if value="{{ isDaily }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+            <div style="display:flex;gap:4px;background:#F2EAE3;border-radius:11px;padding:4px">
+              <button onclick="{{ setAll }}" style="{{ fAllStyle }}">전체</button>
+              <button onclick="{{ setIncome }}" style="{{ fIncomeStyle }}">수입</button>
+              <button onclick="{{ setExpense }}" style="{{ fExpenseStyle }}">지출</button>
+            </div>
+            <span style="font-size:13px;color:var(--muted);font-weight:600">{{ rowCount }}건</span>
+          </div>
+          <div style="background:#fff;border:1px solid #EFE2DA;border-radius:16px;overflow:hidden">
+            <div style="display:flex;align-items:center;padding:12px 20px;background:#FAF6F2;border-bottom:1px solid #F0EAE4;font-size:12px;font-weight:700;color:var(--muted)">
+              <div style="width:70px;flex-shrink:0">날짜</div><div style="flex:1">거래처</div><div style="width:150px;flex-shrink:0;text-align:center">분류</div><div style="width:150px;flex-shrink:0;text-align:right">금액</div>
+            </div>
+            <sc-for list="{{ rows }}" as="tx" hint-placeholder-count="9">
+            <div style="display:flex;align-items:center;padding:14px 20px;border-top:1px solid #F4EEE8">
+              <div style="width:70px;flex-shrink:0;font-size:13px;color:var(--muted);font-weight:600">{{ tx.date }}</div>
+              <div style="flex:1;min-width:0;font-size:14.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ tx.name }}</div>
+              <div style="width:150px;flex-shrink:0;display:flex;justify-content:center"><span style="font-size:11.5px;font-weight:700;border-radius:7px;padding:4px 11px;background:{{ tx.tagBg }};color:{{ tx.tagColor }};white-space:nowrap">{{ tx.cat }}</span></div>
+              <div style="width:150px;flex-shrink:0;text-align:right;font-size:15px;font-weight:800;color:{{ tx.amtColor }}">{{ tx.amt }}</div>
+            </div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- MONTHLY (aggregated) view -->
+        <sc-if value="{{ isMonthly }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="font-size:14px;font-weight:800;margin-bottom:14px">분류별 합계</div>
+          <div style="background:#fff;border:1px solid #EFE2DA;border-radius:16px;overflow:hidden">
+            <div style="display:flex;align-items:center;padding:12px 20px;background:#FAF6F2;border-bottom:1px solid #F0EAE4;font-size:12px;font-weight:700;color:var(--muted)">
+              <div style="flex:1">분류</div><div style="width:90px;flex-shrink:0;text-align:right">건수</div><div style="width:160px;flex-shrink:0;text-align:right">합계</div>
+            </div>
+            <sc-for list="{{ groups }}" as="g" hint-placeholder-count="7">
+            <div style="display:flex;align-items:center;padding:14px 20px;border-top:1px solid #F4EEE8">
+              <div style="flex:1;min-width:0;display:flex;align-items:center;gap:10px"><span style="font-size:11.5px;font-weight:700;border-radius:7px;padding:4px 11px;background:{{ g.tagBg }};color:{{ g.tagColor }};white-space:nowrap">{{ g.cat }}</span></div>
+              <div style="width:90px;flex-shrink:0;text-align:right;font-size:13.5px;color:var(--body);font-weight:600">{{ g.count }}건</div>
+              <div style="width:160px;flex-shrink:0;text-align:right;font-size:15px;font-weight:800;color:{{ g.amtColor }}">{{ g.total }}</div>
+            </div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+        </div>
+        </sc-if>
+
+        <!-- ===================== 홈 (마이페이지) ===================== -->
+        <sc-if value="{{ navHome }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <h2 style="font-size:23px;font-weight:800;letter-spacing:-.02em;margin:0 0 5px">안녕하세요, 김대표 님 👋</h2>
+          <p style="font-size:14px;color:var(--body);margin:0 0 22px">2025년 6월 · 이번 달 현황이에요</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px">
+            <div style="background:#fff;border:1px solid #EFE2DA;border-radius:18px;padding:20px 22px"><div style="font-size:13px;color:var(--body);margin-bottom:9px">이번 달 수입</div><div style="font-size:26px;font-weight:800;color:var(--accent-strong);letter-spacing:-.02em">{{ homeIncome }}</div></div>
+            <div style="background:#fff;border:1px solid #EFE2DA;border-radius:18px;padding:20px 22px"><div style="font-size:13px;color:var(--body);margin-bottom:9px">이번 달 지출</div><div style="font-size:26px;font-weight:800;color:#8A8178;letter-spacing:-.02em">{{ homeExpense }}</div></div>
+            <div style="background:linear-gradient(150deg,#FBF3EF,#F8E9E0);border:1px solid #F1DACE;border-radius:18px;padding:20px 22px"><div style="font-size:13px;color:var(--accent-strong);margin-bottom:9px;font-weight:600">순이익</div><div style="font-size:26px;font-weight:800;color:var(--accent-strong);letter-spacing:-.02em">{{ homeNet }}</div></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(150deg,#FBF3EF,#F8E9E0);border:1px solid #F1DACE;border-radius:16px;padding:18px 20px;margin-bottom:26px">
+            <div><div style="font-size:14.5px;font-weight:800;margin-bottom:3px">이번 달, 정리 중이에요</div><div style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:#8A6A28;font-weight:600"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E8E63" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>파일 2개 · 거래 47건 쌓였어요</div></div>
+            <div style="display:flex;gap:9px;flex-shrink:0">
+              <button style="display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #E7DDD4;color:var(--accent-strong);font-size:14px;font-weight:700;padding:12px 18px;border-radius:12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V5"></path><path d="M7 10l5-5 5 5"></path><path d="M5 19h14"></path></svg>파일 추가 던지기</button>
+              <button style="display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;border:none;font-size:14.5px;font-weight:700;padding:12px 20px;border-radius:12px;box-shadow:0 9px 20px rgba(224,120,86,.3)">이번 달 패키지 만들기<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+            </div>
+          </div>
+          <div style="font-size:15.5px;font-weight:800;margin-bottom:13px">지난 정리 이력</div>
+          <div style="display:flex;flex-direction:column;gap:11px">
+            <sc-for list="{{ homeHistory }}" as="h" hint-placeholder-count="3">
+            <div style="background:#fff;border:1px solid #EFE2DA;border-radius:16px;padding:15px 20px;display:flex;align-items:center;gap:18px">
+              <div style="flex:1;min-width:0"><div style="font-size:15px;font-weight:800;margin-bottom:4px">{{ h.label }}</div><div style="display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--body)"><span>거래 {{ h.cnt }}</span><span style="width:3px;height:3px;border-radius:50%;background:#D6CCC3"></span><span style="display:inline-flex;align-items:center;gap:5px;color:{{ h.statusColor }};font-weight:700"><span style="width:7px;height:7px;border-radius:50%;background:{{ h.statusDot }}"></span>{{ h.statusText }}</span></div></div>
+              <div style="text-align:right;margin-right:4px"><div style="font-size:11px;color:var(--muted)">순이익</div><div style="font-size:15px;font-weight:800;color:var(--accent-strong)">{{ h.net }}</div></div>
+              <div style="display:flex;gap:8px;flex-shrink:0">
+                <button style="background:#fff;border:1px solid #E7DDD4;color:#5C544C;font-size:13px;font-weight:700;padding:9px 14px;border-radius:10px">다시 보기</button>
+                <button style="background:var(--accent-tint);border:1px solid #F1D8CC;color:var(--accent-strong);font-size:13px;font-weight:700;padding:9px 14px;border-radius:10px">재전송</button>
+              </div>
+            </div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- ===================== 연간 요약 ===================== -->
+        <sc-if value="{{ navYear }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <h2 style="font-size:23px;font-weight:800;letter-spacing:-.02em;margin:0 0 18px">2025년 연간 요약</h2>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:26px">
+            <div style="background:#fff;border:1px solid #EFE2DA;border-radius:18px;padding:20px 22px"><div style="font-size:13px;color:var(--body);margin-bottom:9px">올해 총 수입</div><div style="font-size:26px;font-weight:800;color:var(--accent-strong);letter-spacing:-.02em">{{ yearIncome }}</div></div>
+            <div style="background:#fff;border:1px solid #EFE2DA;border-radius:18px;padding:20px 22px"><div style="font-size:13px;color:var(--body);margin-bottom:9px">올해 총 지출</div><div style="font-size:26px;font-weight:800;color:#8A8178;letter-spacing:-.02em">{{ yearExpense }}</div></div>
+            <div style="background:linear-gradient(150deg,#FBF3EF,#F8E9E0);border:1px solid #F1DACE;border-radius:18px;padding:20px 22px"><div style="font-size:13px;color:var(--accent-strong);margin-bottom:9px;font-weight:600">올해 순이익</div><div style="font-size:26px;font-weight:800;color:var(--accent-strong);letter-spacing:-.02em">{{ yearNet }}</div></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:flex-end;gap:16px;margin-bottom:12px">
+            <span style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--body)"><span style="width:11px;height:11px;border-radius:3px;background:var(--accent)"></span>수입</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--body)"><span style="width:11px;height:11px;border-radius:3px;background:#D9A441"></span>지출</span>
+          </div>
+          <div style="background:#fff;border:1px solid #EFE2DA;border-radius:18px;padding:24px 24px 16px;margin-bottom:22px">
+            <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:10px;height:176px;padding-bottom:10px;border-bottom:1px solid #F4EEE8">
+              <sc-for list="{{ bars }}" as="bar" hint-placeholder-count="12">
+              <div style="flex:1;display:flex;align-items:flex-end;justify-content:center;gap:4px;height:100%;opacity:{{ bar.opacity }}">
+                <div style="width:11px;height:{{ bar.incomeH }};background:{{ bar.incCol }};border-radius:4px 4px 0 0"></div>
+                <div style="width:11px;height:{{ bar.expenseH }};background:{{ bar.expCol }};border-radius:4px 4px 0 0"></div>
+              </div>
+              </sc-for>
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:10px;margin-top:8px">
+              <sc-for list="{{ bars }}" as="bar" hint-placeholder-count="12">
+              <span style="flex:1;text-align:center;font-size:11px;color:{{ bar.labelColor }};font-weight:{{ bar.labelWeight }}">{{ bar.label }}</span>
+              </sc-for>
+            </div>
+          </div>
+          <div style="font-size:15.5px;font-weight:800;margin-bottom:12px">월별 표</div>
+          <div style="background:#fff;border:1px solid #EFE2DA;border-radius:16px;overflow:hidden">
+            <div style="display:flex;padding:11px 20px;background:#FAF6F2;border-bottom:1px solid #F0EAE4;font-size:12px;font-weight:700;color:var(--muted)"><div style="width:70px">월</div><div style="flex:1;text-align:right">수입</div><div style="flex:1;text-align:right">지출</div><div style="flex:1;text-align:right">순이익</div></div>
+            <sc-for list="{{ table }}" as="row" hint-placeholder-count="12">
+            <div style="display:flex;padding:11px 20px;border-top:1px solid #F4EEE8;font-size:13.5px;background:{{ row.rowBg }};color:{{ row.textColor }}"><div style="width:70px;font-weight:700">{{ row.label }}</div><div style="flex:1;text-align:right;font-weight:700;color:{{ row.netColor }}">{{ row.income }}</div><div style="flex:1;text-align:right">{{ row.expense }}</div><div style="flex:1;text-align:right;font-weight:800;color:{{ row.netColor }}">{{ row.net }}</div></div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- ===================== 패키지 전달 ===================== -->
+        <sc-if value="{{ navPackage }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px">
+            <button onclick="{{ prevMonth }}" style="width:34px;height:34px;border-radius:10px;background:#fff;border:1px solid #EBE0D8;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F665E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+            <h2 style="font-size:23px;font-weight:800;letter-spacing:-.02em;margin:0;min-width:128px;text-align:center">{{ monthLabel }}</h2>
+            <button onclick="{{ nextMonth }}" style="width:34px;height:34px;border-radius:10px;background:#fff;border:1px solid #EBE0D8;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F665E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></button>
+          </div>
+
+          <div style="background:#fff;border:1px solid #EFE2DA;border-radius:18px;padding:24px;margin-bottom:18px">
+            <div style="display:flex;align-items:center;gap:13px;margin-bottom:18px">
+              <span style="width:46px;height:46px;border-radius:50%;background:var(--in);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+              <div><div style="font-size:17px;font-weight:800">{{ monthLabel }} 정리 완료</div><div style="font-size:13px;color:var(--body)">거래 {{ pkgCount }} · 세무사 검토용 패키지가 준비됐어요</div></div>
+            </div>
+            <div style="display:flex;gap:10px">
+              <div style="flex:1;display:flex;gap:8px">
+                <div style="flex:1;background:#FAF6F2;border:1px solid #EAE0D7;border-radius:11px;padding:11px 14px;font-size:13px;color:#5C544C;display:flex;align-items:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">cfotoday.kr/r/ab12cd</div>
+                <button onclick="{{ noop }}" style="display:inline-flex;align-items:center;gap:6px;background:var(--ink);color:#fff;border:none;font-size:13.5px;font-weight:700;padding:0 16px;border-radius:11px;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V5a2 2 0 0 1 2-2h10"></path></svg>링크 복사</button>
+              </div>
+              <button onclick="{{ noop }}" style="display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;border:none;font-size:13.5px;font-weight:700;padding:11px 18px;border-radius:11px;box-shadow:0 8px 16px rgba(224,120,86,.28);flex-shrink:0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5"></path><path d="M5 20h14"></path></svg>다운로드</button>
+            </div>
+          </div>
+
+          <div style="font-size:15.5px;font-weight:800;margin-bottom:12px">전달 이력</div>
+          <div style="background:#fff;border:1px solid #EFE2DA;border-radius:16px;overflow:hidden">
+            <sc-for list="{{ deliveries }}" as="d" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;gap:14px;padding:15px 20px;border-top:1px solid #F4EEE8">
+              <span style="width:34px;height:34px;border-radius:10px;background:#E7F1EA;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3E8E63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+              <div style="flex:1;min-width:0"><div style="font-size:14.5px;font-weight:800">{{ d.label }}</div><div style="font-size:12px;color:var(--muted)">{{ d.sub }}</div></div>
+              <span style="font-size:12.5px;color:var(--body);font-weight:600;flex-shrink:0">{{ d.cnt }}</span>
+              <button style="background:var(--accent-tint);border:1px solid #F1D8CC;color:var(--accent-strong);font-size:12.5px;font-weight:700;padding:8px 13px;border-radius:9px;flex-shrink:0">재전송</button>
+            </div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+      </main>
+    </div>
+
+    <!-- ===== 프로필 편집 슬라이드 패널 ===== -->
+    <sc-if value="{{ profileOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;z-index:30;display:flex;justify-content:flex-end">
+      <div onclick="{{ closeProfile }}" style="position:absolute;inset:0;background:rgba(42,36,32,.34)"></div>
+      <div style="position:relative;width:404px;max-width:90%;height:100%;background:#FCFAF7;box-shadow:-14px 0 44px rgba(80,60,50,.2);display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid #F1EBE4;flex-shrink:0">
+          <h3 style="font-size:18px;font-weight:800;letter-spacing:-.02em;margin:0">프로필 설정</h3>
+          <button onclick="{{ closeProfile }}" style="width:32px;height:32px;border-radius:9px;background:#F2EAE3;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F665E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"></path></svg></button>
+        </div>
+
+        <div style="flex:1;overflow-y:auto;padding:22px 24px">
+          <div style="display:flex;align-items:center;gap:13px;margin-bottom:24px">
+            <span style="width:52px;height:52px;border-radius:50%;background:var(--ink);color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">재</span>
+            <div><div style="font-size:16px;font-weight:800">김대표 님</div><div style="font-size:12.5px;color:var(--muted)">오늘경리와 함께한 지 5개월째</div></div>
+          </div>
+
+          <!-- 계정 정보 (수정 불가) -->
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:11px">
+            <span style="font-size:12.5px;font-weight:800;color:var(--accent-strong);background:var(--accent-tint);border-radius:7px;padding:4px 10px">계정 정보</span>
+            <span style="font-size:11.5px;color:var(--muted)">수정 불가</span>
+          </div>
+          <label style="display:block;font-size:12.5px;font-weight:700;color:#5C544C;margin-bottom:7px">이메일</label>
+          <div style="display:flex;align-items:center;gap:8px;background:#F4EFEA;border:1px solid #EAE0D7;border-radius:12px;padding:13px 14px;margin-bottom:26px">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A39A91" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><path d="M3 7l9 6 9-6"></path></svg>
+            <span style="font-size:14px;color:var(--body);font-weight:600">kim@cfotoday.kr</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C4B9AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+          </div>
+
+          <!-- 선택 정보 -->
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+            <span style="font-size:12.5px;font-weight:800;color:#8A8178;background:#F2EAE3;border-radius:7px;padding:4px 10px">선택 정보</span>
+          </div>
+          <p style="font-size:12px;color:var(--muted);margin:0 0 16px">선택 정보 — 나중에 입력해도 돼요</p>
+
+          <label style="display:block;font-size:12.5px;font-weight:700;color:#5C544C;margin-bottom:7px">이름</label>
+          <input type="text" value="김대표" placeholder="추가하기" style="width:100%;box-sizing:border-box;background:#fff;border:1px solid #E7DDD4;border-radius:12px;padding:13px 14px;font-size:14px;color:var(--ink);outline:none;margin-bottom:14px" style-focus="border-color:var(--accent)">
+
+          <label style="display:block;font-size:12.5px;font-weight:700;color:#5C544C;margin-bottom:7px">직책</label>
+          <input type="text" placeholder="추가하기 (예: 대표 · 이사)" style="width:100%;box-sizing:border-box;background:#fff;border:1px solid #ECE4DC;border-radius:12px;padding:13px 14px;font-size:14px;color:var(--ink);outline:none;margin-bottom:14px" style-focus="border-color:var(--accent)">
+
+          <label style="display:block;font-size:12.5px;font-weight:700;color:#5C544C;margin-bottom:7px">회사명</label>
+          <input type="text" value="(주)오늘컴퍼니" placeholder="추가하기" style="width:100%;box-sizing:border-box;background:#fff;border:1px solid #E7DDD4;border-radius:12px;padding:13px 14px;font-size:14px;color:var(--ink);outline:none" style-focus="border-color:var(--accent)">
+        </div>
+
+        <div style="flex-shrink:0;padding:16px 24px 22px;border-top:1px solid #F1EBE4;background:#FCFAF7">
+          <button style="width:100%;background:var(--accent);color:#fff;border:none;font-size:15px;font-weight:700;padding:15px;border-radius:13px;box-shadow:0 9px 20px rgba(224,120,86,.3)">저장하기</button>
+          <div style="text-align:center;margin-top:14px"><button style="background:none;border:none;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer">로그아웃</button></div>
+          <div style="text-align:center;margin-top:11px"><button onclick="{{ openLeave }}" style="background:none;border:none;font-size:11.5px;font-weight:500;color:#C4B9AE;cursor:pointer">회원 탈퇴</button></div>
+        </div>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- ===== 탈퇴 확인 모달 ===== -->
+    <sc-if value="{{ confirmLeave }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;z-index:40;display:flex;align-items:center;justify-content:center;padding:24px">
+      <div onclick="{{ closeLeave }}" style="position:absolute;inset:0;background:rgba(42,36,32,.4)"></div>
+      <div style="position:relative;width:368px;max-width:100%;background:#fff;border-radius:20px;padding:28px 26px 24px;box-shadow:0 24px 60px rgba(80,60,50,.28);text-align:center">
+        <h3 style="font-size:18px;font-weight:800;letter-spacing:-.02em;margin:0 0 9px">정말 탈퇴하시겠어요?</h3>
+        <p style="font-size:13.5px;color:var(--body);line-height:1.6;margin:0 0 22px">탈퇴하면 그동안 정리한 <b style="color:var(--ink)">모든 이력이 삭제</b>되고<br>되돌릴 수 없어요.</p>
+        <button onclick="{{ closeLeave }}" style="width:100%;background:var(--accent);color:#fff;border:none;font-size:15px;font-weight:700;padding:14px;border-radius:13px;box-shadow:0 9px 20px rgba(224,120,86,.3);margin-bottom:12px">취소하고 계속 쓰기</button>
+        <button style="background:none;border:none;font-size:12.5px;font-weight:600;color:#B6ABA1;cursor:pointer">탈퇴하기</button>
+      </div>
+    </div>
+    </sc-if>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 모바일 버전 (390px · 하단 탭바) -->
+  <!-- ============================================================ -->
+  <div style="max-width:1300px;margin:44px auto 0">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+      <span style="width:26px;height:26px;border-radius:8px;background:var(--ink);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">📱</span>
+      <h2 style="font-size:19px;font-weight:800;margin:0;letter-spacing:-.02em">모바일 버전 (390px)</h2>
+      <span style="font-size:12.5px;color:var(--body)">사이드바 대신 하단 탭바 · 탭 눌러 화면 전환</span>
+    </div>
+
+    <div style="width:390px;background:#fff;border-radius:40px;padding:10px;box-shadow:0 22px 50px rgba(80,60,50,.16);border:1px solid #EBE3DC">
+      <div style="background:#FCF9F5;border-radius:32px;overflow:hidden;height:780px;display:flex;flex-direction:column">
+        <!-- top bar -->
+        <div style="background:#fff;flex-shrink:0">
+          <div style="height:30px;display:flex;justify-content:center;align-items:center"><div style="width:100px;height:7px;border-radius:5px;background:#EFE8E2"></div></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 18px 13px;border-bottom:1px solid #F4EEE8">
+            <span style="font-size:16px;font-weight:800;letter-spacing:-.02em">오늘<span style="color:var(--accent)">경리</span></span>
+            <span style="width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center">재</span>
+          </div>
+        </div>
+
+        <!-- scrollable content -->
+        <div style="flex:1;overflow-y:auto;display:flex;flex-direction:column">
+
+          <!-- 홈 -->
+          <sc-if value="{{ navHome }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;display:flex;flex-direction:column">
+            <div style="padding:18px 16px 0">
+              <h2 style="font-size:20px;font-weight:800;letter-spacing:-.02em;margin:0 0 4px">안녕하세요, 김대표 님 👋</h2>
+              <p style="font-size:13px;color:var(--body);margin:0 0 16px">2025년 6월 · 이번 달 현황이에요</p>
+              <div style="display:flex;gap:8px;margin-bottom:20px">
+                <div style="flex:1;background:#fff;border:1px solid #EFE2DA;border-radius:14px;padding:13px 12px"><div style="font-size:11px;color:var(--muted);margin-bottom:5px">수입</div><div style="font-size:16px;font-weight:800;color:var(--accent-strong)">{{ homeIncome }}</div></div>
+                <div style="flex:1;background:#fff;border:1px solid #EFE2DA;border-radius:14px;padding:13px 12px"><div style="font-size:11px;color:var(--muted);margin-bottom:5px">지출</div><div style="font-size:16px;font-weight:800;color:#8A8178">{{ homeExpense }}</div></div>
+                <div style="flex:1;background:linear-gradient(150deg,#FBF3EF,#F8E9E0);border:1px solid #F1DACE;border-radius:14px;padding:13px 12px"><div style="font-size:11px;color:var(--accent-strong);margin-bottom:5px">순이익</div><div style="font-size:16px;font-weight:800;color:var(--accent-strong)">{{ homeNet }}</div></div>
+              </div>
+              <div style="font-size:15px;font-weight:800;margin-bottom:11px">지난 정리 이력</div>
+            </div>
+            <div style="padding:0 16px;display:flex;flex-direction:column;gap:10px">
+              <sc-for list="{{ homeHistory }}" as="h" hint-placeholder-count="3">
+              <div style="background:#fff;border:1px solid #EFE2DA;border-radius:14px;padding:14px 15px">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px"><span style="font-size:15px;font-weight:800">{{ h.label }}</span><span style="font-size:15px;font-weight:800;color:var(--accent-strong)">{{ h.net }}</span></div>
+                <div style="display:flex;align-items:center;justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:5px;font-size:12px;color:{{ h.statusColor }};font-weight:700"><span style="width:7px;height:7px;border-radius:50%;background:{{ h.statusDot }}"></span>거래 {{ h.cnt }} · {{ h.statusText }}</span><button style="background:var(--accent-tint);border:1px solid #F1D8CC;color:var(--accent-strong);font-size:12px;font-weight:700;padding:7px 12px;border-radius:9px">재전송</button></div>
+              </div>
+              </sc-for>
+              <div style="height:8px"></div>
+            </div>
+            <div style="position:sticky;bottom:0;margin-top:auto;background:linear-gradient(180deg,rgba(252,249,245,0),#FCF9F5 26%);padding:14px 16px 16px">
+              <button style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:#fff;border:none;font-size:15px;font-weight:700;min-height:52px;border-radius:14px;box-shadow:0 9px 20px rgba(224,120,86,.3)">이번 달 정리 시작하기<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+            </div>
+          </div>
+          </sc-if>
+
+          <!-- 월별 내역 -->
+          <sc-if value="{{ navMonthly }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div style="padding:16px 16px 0">
+              <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:16px">
+                <button onclick="{{ prevMonth }}" style="width:36px;height:36px;border-radius:10px;background:#fff;border:1px solid #EBE0D8;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F665E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+                <span style="font-size:17px;font-weight:800;min-width:120px;text-align:center">{{ monthLabel }}</span>
+                <button onclick="{{ nextMonth }}" style="width:36px;height:36px;border-radius:10px;background:#fff;border:1px solid #EBE0D8;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F665E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></button>
+              </div>
+              <div style="display:flex;gap:8px;margin-bottom:16px">
+                <div style="flex:1;background:#fff;border:1px solid #EFE2DA;border-radius:14px;padding:12px"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">수입</div><div style="font-size:15px;font-weight:800;color:var(--accent-strong)">{{ incomeStr }}</div></div>
+                <div style="flex:1;background:#fff;border:1px solid #EFE2DA;border-radius:14px;padding:12px"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">지출</div><div style="font-size:15px;font-weight:800;color:#8A8178">{{ expenseStr }}</div></div>
+                <div style="flex:1;background:linear-gradient(150deg,#FBF3EF,#F8E9E0);border:1px solid #F1DACE;border-radius:14px;padding:12px"><div style="font-size:11px;color:var(--accent-strong);margin-bottom:4px">순이익</div><div style="font-size:15px;font-weight:800;color:var(--accent-strong)">{{ netStr }}</div></div>
+              </div>
+              <div style="display:flex;gap:4px;background:#F2EAE3;border-radius:11px;padding:4px;margin-bottom:14px">
+                <button onclick="{{ setAll }}" style="{{ fAllStyle }};flex:1">전체</button>
+                <button onclick="{{ setIncome }}" style="{{ fIncomeStyle }};flex:1">수입</button>
+                <button onclick="{{ setExpense }}" style="{{ fExpenseStyle }};flex:1">지출</button>
+              </div>
+            </div>
+            <div style="background:#fff;border-top:1px solid #F4EEE8">
+              <sc-for list="{{ rows }}" as="tx" hint-placeholder-count="9">
+              <div style="display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid #F4EEE8;min-height:48px;box-sizing:border-box">
+                <span style="font-size:11px;color:#BBB1A7;font-weight:600;flex-shrink:0;width:34px">{{ tx.date }}</span>
+                <span style="flex:1;min-width:0;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ tx.name }}</span>
+                <span style="font-size:10.5px;font-weight:700;border-radius:6px;padding:4px 8px;background:{{ tx.tagBg }};color:{{ tx.tagColor }};white-space:nowrap;flex-shrink:0">{{ tx.cat }}</span>
+                <span style="width:78px;flex-shrink:0;text-align:right;font-size:15px;font-weight:800;white-space:nowrap;color:{{ tx.amtColor }}">{{ tx.amtShort }}</span>
+              </div>
+              </sc-for>
+            </div>
+          </div>
+          </sc-if>
+
+          <!-- 연간 요약 -->
+          <sc-if value="{{ navYear }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:18px 16px 16px">
+            <h2 style="font-size:19px;font-weight:800;letter-spacing:-.02em;margin:0 0 14px">2025년 연간 요약</h2>
+            <div style="display:flex;gap:8px;margin-bottom:18px">
+              <div style="flex:1;background:#fff;border:1px solid #EFE2DA;border-radius:14px;padding:12px"><div style="font-size:10.5px;color:var(--muted);margin-bottom:4px">총 수입</div><div style="font-size:14.5px;font-weight:800;color:var(--accent-strong)">{{ yearIncome }}</div></div>
+              <div style="flex:1;background:#fff;border:1px solid #EFE2DA;border-radius:14px;padding:12px"><div style="font-size:10.5px;color:var(--muted);margin-bottom:4px">총 지출</div><div style="font-size:14.5px;font-weight:800;color:#8A8178">{{ yearExpense }}</div></div>
+              <div style="flex:1;background:linear-gradient(150deg,#FBF3EF,#F8E9E0);border:1px solid #F1DACE;border-radius:14px;padding:12px"><div style="font-size:10.5px;color:var(--accent-strong);margin-bottom:4px">순이익</div><div style="font-size:14.5px;font-weight:800;color:var(--accent-strong)">{{ yearNet }}</div></div>
+            </div>
+            <div style="background:#fff;border:1px solid #EFE2DA;border-radius:16px;padding:16px 14px 12px;margin-bottom:16px;overflow-x:auto">
+              <div style="display:flex;align-items:flex-end;gap:10px;height:150px;padding-bottom:8px;border-bottom:1px solid #F4EEE8;min-width:420px">
+                <sc-for list="{{ bars }}" as="bar" hint-placeholder-count="12">
+                <div style="width:28px;flex-shrink:0;display:flex;align-items:flex-end;justify-content:center;gap:3px;height:100%;opacity:{{ bar.opacity }}">
+                  <div style="width:9px;height:{{ bar.incomeH }};background:{{ bar.incCol }};border-radius:3px 3px 0 0"></div>
+                  <div style="width:9px;height:{{ bar.expenseH }};background:{{ bar.expCol }};border-radius:3px 3px 0 0"></div>
+                </div>
+                </sc-for>
+              </div>
+              <div style="display:flex;gap:10px;margin-top:7px;min-width:420px">
+                <sc-for list="{{ bars }}" as="bar" hint-placeholder-count="12">
+                <span style="width:28px;flex-shrink:0;text-align:center;font-size:10.5px;color:{{ bar.labelColor }};font-weight:{{ bar.labelWeight }}">{{ bar.label }}</span>
+                </sc-for>
+              </div>
+            </div>
+            <div style="background:#fff;border:1px solid #EFE2DA;border-radius:16px;overflow:hidden">
+              <div style="display:flex;padding:10px 16px;background:#FAF6F2;border-bottom:1px solid #F0EAE4;font-size:11px;font-weight:700;color:var(--muted)"><div style="width:42px">월</div><div style="flex:1;text-align:right">수입</div><div style="flex:1;text-align:right">지출</div><div style="flex:1;text-align:right">순이익</div></div>
+              <sc-for list="{{ table }}" as="row" hint-placeholder-count="12">
+              <div style="display:flex;padding:11px 16px;border-top:1px solid #F4EEE8;font-size:12.5px;background:{{ row.rowBg }};color:{{ row.textColor }}"><div style="width:42px;font-weight:700">{{ row.label }}</div><div style="flex:1;text-align:right;font-weight:700;color:{{ row.netColor }}">{{ row.income }}</div><div style="flex:1;text-align:right">{{ row.expense }}</div><div style="flex:1;text-align:right;font-weight:800;color:{{ row.netColor }}">{{ row.net }}</div></div>
+              </sc-for>
+            </div>
+          </div>
+          </sc-if>
+
+          <!-- 패키지 전달 -->
+          <sc-if value="{{ navPackage }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:16px 16px 16px">
+            <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:16px">
+              <button onclick="{{ prevMonth }}" style="width:36px;height:36px;border-radius:10px;background:#fff;border:1px solid #EBE0D8;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F665E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+              <span style="font-size:17px;font-weight:800;min-width:120px;text-align:center">{{ monthLabel }}</span>
+              <button onclick="{{ nextMonth }}" style="width:36px;height:36px;border-radius:10px;background:#fff;border:1px solid #EBE0D8;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F665E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></button>
+            </div>
+            <div style="background:#fff;border:1px solid #EFE2DA;border-radius:16px;padding:18px;margin-bottom:16px">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+                <span style="width:44px;height:44px;border-radius:50%;background:var(--in);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+                <div><div style="font-size:16px;font-weight:800">{{ monthLabel }} 정리 완료</div><div style="font-size:12.5px;color:var(--body)">거래 {{ pkgCount }} · 패키지 준비됨</div></div>
+              </div>
+              <div style="display:flex;gap:7px;margin-bottom:10px">
+                <div style="flex:1;background:#FAF6F2;border:1px solid #EAE0D7;border-radius:11px;padding:12px 14px;font-size:13px;color:#5C544C;display:flex;align-items:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">cfotoday.kr/r/ab12cd</div>
+              </div>
+              <button style="width:100%;display:flex;align-items:center;justify-content:center;gap:7px;background:var(--ink);color:#fff;border:none;font-size:15px;font-weight:700;min-height:50px;border-radius:12px;margin-bottom:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V5a2 2 0 0 1 2-2h10"></path></svg>링크 복사</button>
+              <button style="width:100%;display:flex;align-items:center;justify-content:center;gap:7px;background:var(--accent);color:#fff;border:none;font-size:15px;font-weight:700;min-height:50px;border-radius:12px;box-shadow:0 8px 16px rgba(224,120,86,.28)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5"></path><path d="M5 20h14"></path></svg>다운로드</button>
+            </div>
+            <div style="font-size:15px;font-weight:800;margin-bottom:11px">전달 이력</div>
+            <div style="background:#fff;border:1px solid #EFE2DA;border-radius:16px;overflow:hidden">
+              <sc-for list="{{ deliveries }}" as="d" hint-placeholder-count="3">
+              <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-top:1px solid #F4EEE8">
+                <span style="width:34px;height:34px;border-radius:10px;background:#E7F1EA;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3E8E63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+                <div style="flex:1;min-width:0"><div style="font-size:14.5px;font-weight:800">{{ d.label }}</div><div style="font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ d.sub }}</div></div>
+                <button style="background:var(--accent-tint);border:1px solid #F1D8CC;color:var(--accent-strong);font-size:12px;font-weight:700;padding:8px 12px;border-radius:9px;flex-shrink:0">재전송</button>
+              </div>
+              </sc-for>
+            </div>
+          </div>
+          </sc-if>
+
+        </div>
+
+        <!-- bottom tab bar -->
+        <nav style="flex-shrink:0;display:flex;background:#fff;border-top:1px solid #EFE7E0;padding:6px 6px 10px">
+          <sc-for list="{{ tabItems }}" as="tab" hint-placeholder-count="4">
+          <button onclick="{{ tab.onClick }}" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:none;border:none;min-height:52px;cursor:pointer;padding:6px 0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="{{ tab.color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ tab.iconD }}"></path></svg>
+            <span style="font-size:11px;font-weight:{{ tab.weight }};color:{{ tab.color }}">{{ tab.label }}</span>
+          </button>
+          </sc-for>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  state = { month:5, view:'daily', filter:'all', nav:'monthly', profileOpen:false, confirmLeave:false };
+
+  MAY = [
+    { date:'05.03', name:'○○마트 정기 납품', cat:'매출', amount:3800000 },
+    { date:'05.05', name:'컨설팅 수익',       cat:'매출', amount:1200000 },
+    { date:'05.08', name:'5월 직원 급여',     cat:'인건비', amount:-1500000 },
+    { date:'05.10', name:'사무실 임대료',     cat:'임차료', amount:-550000 },
+    { date:'05.13', name:'네이버 광고비',     cat:'광고·마케팅비', amount:-320000 },
+    { date:'05.15', name:'스타벅스 강남점',   cat:'복리후생비', amount:-38000 },
+    { date:'05.20', name:'쿠팡 사무용품',     cat:'사무용품·소모품', amount:-64000 },
+    { date:'05.22', name:'디자인 외주 (로고)', cat:'외주비', amount:-400000 },
+    { date:'05.27', name:'클라우드 구독료',   cat:'소프트웨어 구독료', amount:-89000 },
+  ];
+
+  NAV = [
+    { key:'home',    label:'홈 (마이페이지)', iconD:'M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z' },
+    { key:'monthly', label:'월별 내역',       iconD:'M4 6h16M4 12h16M4 18h10' },
+    { key:'year',    label:'연간 요약',       iconD:'M3 3v18h18M7 14l3-3 3 3 4-5' },
+    { key:'package', label:'패키지 전달',     iconD:'M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8' },
+  ];
+
+  MONTHLY_TOTALS = [[420,240],[480,280],[680,330],[520,300],[500,296],[650,201],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]];
+
+  DELIVERIES = [
+    { label:'2025년 5월', sub:'2025.06.03 · 카카오톡 전달', cnt:'84건' },
+    { label:'2025년 4월', sub:'2025.05.04 · 파일 다운로드', cnt:'76건' },
+    { label:'2025년 3월', sub:'2025.04.05 · 카카오톡 전달', cnt:'91건' },
+  ];
+
+  fm(n){ return n.toLocaleString('ko-KR') + '만원'; }
+
+  extra(){
+    const T = this.MONTHLY_TOTALS;
+    const th = T[5]; // 6월
+    const cnt = {5:84,4:76,3:91};
+    const doneMap = {5:false,4:true,3:true};
+    const homeHistory = [5,4,3].map(n=>{ const done=doneMap[n];
+      return { label:'2025년 '+n+'월', cnt:cnt[n], net:this.fm(T[n-1][0]-T[n-1][1]),
+        statusText: done?'세무사 전달 완료':'정리 중', statusColor: done?'#3E8E63':'#A8651E', statusDot: done?'#3FB27A':'#E8B84A' }; });
+    let yi=0, ye=0; T.forEach(t=>{ if(t[0]>0){ yi+=t[0]; ye+=t[1]; } });
+    const max = Math.max.apply(null, T.map(t=>t[0]).concat([1]));
+    const bars = T.map((t,i)=>{ const n=i+1, has=t[0]>0, sel=n===this.state.month;
+      return { label:''+n,
+        incomeH: has?Math.max(Math.round(t[0]/max*100),4)+'%':'5%',
+        expenseH: has?Math.max(Math.round(t[1]/max*100),3)+'%':'0%',
+        incCol: sel?'var(--accent)':(has?'#F0C3AE':'#E4D8CD'),
+        expCol: sel?'#D9A441':(has?'#EFE2C9':'transparent'),
+        opacity: has?'1':'.4',
+        labelColor: sel?'var(--accent-strong)':(has?'var(--muted)':'#C9BFB5'),
+        labelWeight: sel?'800':'600' };
+    });
+    const table = T.map((t,i)=>{ const n=i+1, has=t[0]>0, sel=n===this.state.month;
+      return { label:n+'월',
+        income: has?this.fm(t[0]):'—', expense: has?this.fm(t[1]):'—', net: has?this.fm(t[0]-t[1]):'—',
+        rowBg: sel?'#FBEDE6':'transparent', textColor: has?'var(--ink)':'#C9BFB5',
+        netColor: has?'var(--accent-strong)':'#C9BFB5' };
+    });
+    return {
+      navHome: this.state.nav==='home',
+      navMonthly: this.state.nav==='monthly',
+      navYear: this.state.nav==='year',
+      navPackage: this.state.nav==='package',
+      homeIncome: this.fm(th[0]), homeExpense: this.fm(th[1]), homeNet: this.fm(th[0]-th[1]),
+      homeHistory,
+      yearIncome: this.fm(yi), yearExpense: this.fm(ye), yearNet: this.fm(yi-ye),
+      bars, table,
+      pkgCount: this.getTx(this.state.month).length + '건',
+      deliveries: this.DELIVERIES,
+      noop: ()=>{},
+      profileOpen: this.state.profileOpen,
+      openProfile: ()=>this.setState({ profileOpen:true }),
+      closeProfile: ()=>this.setState({ profileOpen:false, confirmLeave:false }),
+      confirmLeave: this.state.confirmLeave,
+      openLeave: ()=>this.setState({ confirmLeave:true }),
+      closeLeave: ()=>this.setState({ confirmLeave:false }),
+      tabItems: (()=>{ const sl={home:'홈',monthly:'월별',year:'연간',package:'패키지'};
+        return this.NAV.map(n=>{ const active=this.state.nav===n.key;
+          return { label:sl[n.key], iconD:n.iconD, onClick:()=>this.setState({nav:n.key}),
+            color: active?'#C9603F':'#A39A91', weight: active?'800':'600' }; }); })(),
+    };
+  }
+
+  catMeta(cat){
+    if(cat==='매출' || cat==='기타 수입') return { bg:'#E7F1EA', color:'#3E8E63' };
+    if(cat==='인건비' || cat==='임차료' || cat==='복리후생비' || cat==='외주비') return { bg:'#FBEDE6', color:'#C9603F' };
+    return { bg:'#FBF1E0', color:'#A87B2E' };
+  }
+  fmt(a){ return (a<0?'-':'') + '₩' + Math.abs(a).toLocaleString('ko-KR'); }
+  fmtSigned(a){ return (a>0?'+':'-') + '₩' + Math.abs(a).toLocaleString('ko-KR'); }
+  fmtShortSigned(a){ return (a>0?'+':'-') + Math.round(Math.abs(a)/10000).toLocaleString('ko-KR') + '만'; }
+
+  getTx(m){
+    if(m===5) return this.MAY;
+    const mm = String(m).padStart(2,'0');
+    return this.MAY.map(t=>({ ...t, date: mm + t.date.slice(2) }));
+  }
+
+  tab(active){
+    const base='border:none;border-radius:8px;padding:8px 18px;font-size:13.5px;font-weight:700;cursor:pointer;';
+    return active ? base+'background:#fff;color:var(--ink);box-shadow:0 2px 6px rgba(80,60,50,.09)'
+                  : base+'background:transparent;color:var(--muted)';
+  }
+
+  renderVals(){
+    const m = this.state.month;
+    const all = this.getTx(m);
+    const income = all.filter(t=>t.amount>0).reduce((s,t)=>s+t.amount,0);
+    const expense = all.filter(t=>t.amount<0).reduce((s,t)=>s+Math.abs(t.amount),0);
+
+    let shown = all;
+    if(this.state.filter==='income') shown = all.filter(t=>t.amount>0);
+    if(this.state.filter==='expense') shown = all.filter(t=>t.amount<0);
+
+    const rows = shown.map(t=>{
+      const c = this.catMeta(t.cat);
+      return { date:t.date, name:t.name, cat:t.cat, tagBg:c.bg, tagColor:c.color,
+        amt:this.fmtSigned(t.amount), amtShort:this.fmtShortSigned(t.amount), amtColor: t.amount>0 ? 'var(--accent-strong)' : '#8A8178' };
+    });
+
+    // aggregated groups
+    const order = [];
+    const map = {};
+    all.forEach(t=>{ if(!map[t.cat]){ map[t.cat]={cat:t.cat,count:0,total:0}; order.push(t.cat);} map[t.cat].count++; map[t.cat].total+=t.amount; });
+    const groups = order.map(k=>{
+      const g = map[k]; const c = this.catMeta(g.cat);
+      return { cat:g.cat, count:g.count, tagBg:c.bg, tagColor:c.color,
+        total:this.fmtSigned(g.total), amtColor: g.total>0 ? 'var(--accent-strong)' : '#8A8178' };
+    });
+
+    const navItems = this.NAV.map(n=>{
+      const active = this.state.nav===n.key;
+      const base='display:flex;align-items:center;gap:12px;border:none;border-radius:12px;padding:12px 13px;text-align:left;cursor:pointer;width:100%;box-sizing:border-box;';
+      return { label:n.label, iconD:n.iconD,
+        onClick: ()=>this.setState({ nav:n.key }),
+        iconColor: active ? '#fff' : '#A39A91',
+        weight: active ? '800' : '600',
+        style: active ? base+'background:#E07856;color:#fff;box-shadow:0 7px 16px rgba(224,120,86,.3)'
+                      : base+'background:transparent;color:#6F665E',
+        hoverStyle: active ? 'background:#E07856' : 'background:#F4EBE3;color:#2A2420' };
+    });
+
+    return {
+      monthLabel: '2025년 ' + m + '월',
+      prevMonth: ()=>this.setState(s=>({ month: Math.max(1, s.month-1) })),
+      nextMonth: ()=>this.setState(s=>({ month: Math.min(12, s.month+1) })),
+      isDaily: this.state.view==='daily',
+      isMonthly: this.state.view==='monthly',
+      setDaily: ()=>this.setState({ view:'daily' }),
+      setMonthly: ()=>this.setState({ view:'monthly' }),
+      dailyStyle: this.tab(this.state.view==='daily'),
+      monthlyStyle: this.tab(this.state.view==='monthly'),
+      setAll: ()=>this.setState({ filter:'all' }),
+      setIncome: ()=>this.setState({ filter:'income' }),
+      setExpense: ()=>this.setState({ filter:'expense' }),
+      fAllStyle: this.tab(this.state.filter==='all'),
+      fIncomeStyle: this.tab(this.state.filter==='income'),
+      fExpenseStyle: this.tab(this.state.filter==='expense'),
+      incomeStr: this.fmt(income),
+      expenseStr: this.fmt(expense),
+      netStr: this.fmt(income-expense),
+      rows, rowCount: rows.length,
+      groups,
+      navItems,
+      ...this.extra(),
+    };
+  }
+}
+</script>
+
+
+</body></html>

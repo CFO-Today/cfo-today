@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="bda5b471-0385-4d19-8381-5cb65d2bbccb"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/*
+Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard.
+https://github.com/orioncactus/pretendard
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+*/
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 900;
+	font-display: swap;
+	src: local('Pretendard Black'), url("d5284a3b-b6ff-4ad4-833f-cef040a641d5") format('woff2'), url("45e9b659-58bd-4acc-81ac-e58de275d9cc") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 800;
+	font-display: swap;
+	src: local('Pretendard ExtraBold'), url("e37cfd31-ea30-4dec-9b19-3de8b10a9fff") format('woff2'), url("ff6c955d-8fa3-458e-9f3e-f2414c6c8b21") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url("846bce36-3b19-4e43-bbd7-c27960ffa7b2") format('woff2'), url("f4443de0-1672-45a1-9c7a-1f5dd202b8a3") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 600;
+	font-display: swap;
+	src: local('Pretendard SemiBold'), url("11c34927-8d9c-458d-9950-6ccd45b8bd1c") format('woff2'), url("a9321b67-cbdb-4b8e-8982-0642c69637e4") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 500;
+	font-display: swap;
+	src: local('Pretendard Medium'), url("f51f53c5-75df-4816-aa15-bf0e5a0c6f27") format('woff2'), url("8fcc1183-6267-49e0-aa12-b70a19f48e4c") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url("c3190347-4dcd-44c8-a8ab-0c275ff676f2") format('woff2'), url("a119a7a6-5060-4245-948f-3c2f1e5f4fa0") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 300;
+	font-display: swap;
+	src: local('Pretendard Light'), url("1b7254cc-e467-4538-b630-2c867185c8e5") format('woff2'), url("0897be9f-2cc1-46a1-b75a-f56bf86edd01") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 200;
+	font-display: swap;
+	src: local('Pretendard ExtraLight'), url("97c1552c-c177-472c-9c44-fec89aff5994") format('woff2'), url("dde56c66-f829-4618-81df-186bf063adac") format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 100;
+	font-display: swap;
+	src: local('Pretendard Thin'), url("68acdda4-2022-4c3e-89e1-13772427381c") format('woff2'), url("77ced1e9-86b0-4b0e-a048-f15fe4685186") format('woff');
+}
+</style>
+<style>
+  body{margin:0;background:#F1ECE7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  button{cursor:pointer;font-family:inherit}
+  @keyframes ok-spin{to{transform:rotate(360deg)}}
+</style>
+</helmet>
+
+<div style="--accent:#E07856;--accent-strong:#C9603F;--accent-tint:#FBEDE6;--ink:#2A2420;--body:#6F665E;--muted:#A39A91;--line:#EFE7E0;--in:#3E8E63;--out:#CF4B3A;min-height:100vh;background:#F1ECE7;font-family:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,sans-serif;color:#2A2420;padding:46px 40px 90px">
+
+  <!-- PAGE HEADER -->
+  <div style="max-width:1180px;margin:0 auto 40px">
+    <div style="display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #EBE0D8;border-radius:999px;padding:6px 14px;font-size:12.5px;font-weight:700;color:var(--accent-strong);margin-bottom:18px">
+      <span style="width:7px;height:7px;border-radius:50%;background:var(--accent)"></span>
+      오늘경리 · 예상 분류 확인 (pg-confirm)
+    </div>
+    <h1 style="font-size:30px;font-weight:800;letter-spacing:-.03em;margin:0 0 8px;line-height:1.2">분류 확인 화면, 비가입 · 가입 두 버전</h1>
+    <p style="font-size:15px;color:var(--body);margin:0;line-height:1.6">검토 필요·기타 항목을 <b style="color:var(--ink)">클릭하면 분류 드롭다운이 펼쳐져요</b> · 상단 "검토 필요" 카드를 누르면 해당 항목으로 이동. 두 버전 모두 동일하게 동작합니다.</p>
+  </div>
+
+  <div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;max-width:1180px;margin:0 auto">
+
+    <!-- ============================================================ -->
+    <!-- 버전 A — 비가입 -->
+    <!-- ============================================================ -->
+    <div style="flex:1;min-width:540px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:13px">
+        <span style="width:26px;height:26px;border-radius:8px;background:#8A8178;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">A</span>
+        <h2 style="font-size:19px;font-weight:800;margin:0;letter-spacing:-.02em">비가입 버전</h2>
+        <span style="font-size:11.5px;font-weight:700;color:#8A8178;background:#F0EAE4;border-radius:999px;padding:4px 11px">1회성 이용</span>
+      </div>
+
+      <div style="background:#fff;border-radius:18px;box-shadow:0 22px 55px rgba(80,60,50,.13);border:1px solid #EBE3DC;overflow:hidden">
+        <div style="height:38px;background:#FAF6F2;border-bottom:1px solid #F0EAE4;display:flex;align-items:center;padding:0 14px;gap:8px">
+          <div style="display:flex;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:#F0B6A6"></span><span style="width:10px;height:10px;border-radius:50%;background:#F3D2A0"></span><span style="width:10px;height:10px;border-radius:50%;background:#BFD9C2"></span></div>
+          <div style="flex:1;max-width:230px;margin:0 auto;background:#fff;border:1px solid #EFE7E0;border-radius:8px;font-size:11px;color:var(--muted);padding:3px 0;text-align:center">cfotoday.kr</div>
+        </div>
+        <header style="display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid #F4EEE8">
+          <span style="font-size:17px;font-weight:800;letter-spacing:-.02em">오늘<span style="color:var(--accent)">경리</span></span>
+          <span style="font-size:12.5px;font-weight:700;color:var(--accent-strong);background:var(--accent-tint);border-radius:999px;padding:5px 12px">가입 없이 1회 정리</span>
+        </header>
+
+        <div style="padding:22px 24px 0">
+          <div style="display:inline-flex;align-items:center;gap:6px;background:var(--accent-tint);color:var(--accent-strong);font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px;margin-bottom:11px">예상 분류 · 참고용</div>
+          <h3 style="font-size:22px;font-weight:800;letter-spacing:-.03em;margin:0 0 6px">분류 결과를 확인해주세요</h3>
+          <p style="font-size:14px;color:var(--body);line-height:1.55;margin:0 0 18px">미리 분류해뒀어요. <b style="color:var(--ink)">검토 필요 항목을 눌러</b> 분류를 골라주세요.</p>
+
+          <!-- month select + tabs -->
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap">
+            <button style="display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #E7DDD4;border-radius:11px;padding:9px 14px;font-size:14px;font-weight:800;color:var(--ink)">2025년 5월<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A39A91" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></button>
+            <div style="display:flex;gap:4px;background:#F2EAE3;border-radius:11px;padding:4px">
+              <span style="font-size:13px;font-weight:700;color:var(--ink);background:#fff;border-radius:8px;padding:7px 16px;box-shadow:0 2px 6px rgba(80,60,50,.08)">전체</span>
+              <span style="font-size:13px;font-weight:700;color:var(--muted);padding:7px 16px">수입</span>
+              <span style="font-size:13px;font-weight:700;color:var(--muted);padding:7px 16px">지출</span>
+            </div>
+          </div>
+
+          <!-- summary chips -->
+          <div style="display:flex;gap:10px;margin-bottom:14px">
+            <div style="flex:1;background:#fff;border:1px solid #EFE2DA;border-radius:13px;padding:12px 15px"><div style="font-size:11.5px;color:var(--muted);margin-bottom:3px">수입</div><div style="font-size:17px;font-weight:800;color:var(--accent-strong)">650만원</div></div>
+            <div style="flex:1;background:#fff;border:1px solid #EFE2DA;border-radius:13px;padding:12px 15px"><div style="font-size:11.5px;color:var(--muted);margin-bottom:3px">지출</div><div style="font-size:17px;font-weight:800;color:#8A8178">201만원</div></div>
+            <button onclick="{{ onRevA }}" style="{{ revCardStyleA }}"><div style="font-size:11.5px;margin-bottom:3px;color:{{ revColorA }}">검토 필요</div><div style="display:flex;align-items:center;gap:5px"><span style="font-size:17px;font-weight:800;color:{{ revColorA }}">{{ revTextA }}</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="{{ revColorA }}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></div></button>
+          </div>
+
+          <!-- list -->
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:11px">
+            <span style="font-size:14px;font-weight:800">거래 내역</span>
+            <button onclick="{{ openUpload }}" style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #E7DDD4;color:var(--accent-strong);font-size:12.5px;font-weight:700;padding:8px 13px;border-radius:10px;cursor:pointer" style-hover="border-color:var(--accent);background:var(--accent-tint)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>파일 추가</button>
+          </div>
+          <div style="background:#fff;border:1px solid #EFE2DA;border-radius:16px;overflow:hidden">
+            <sc-if value="{{ analyzing }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;align-items:center;gap:10px;padding:13px 16px;background:#FBF3EF;border-bottom:1px solid #F4EEE8">
+              <span style="width:18px;height:18px;border-radius:50%;border:2.5px solid #F2E7DE;border-top-color:var(--accent);display:inline-block;box-sizing:border-box;animation:ok-spin .8s linear infinite"></span>
+              <span style="font-size:13px;font-weight:700;color:var(--accent-strong)">새 파일을 분석하고 있어요…</span>
+            </div>
+            </sc-if>
+            <sc-for list="{{ rowsA }}" as="row" hint-placeholder-count="5">
+            <div id="{{ row.domId }}" style="border-top:{{ row.borderTop }};background:{{ row.rowBg }}">
+              <div onclick="{{ row.onClick }}" style="display:flex;align-items:center;gap:13px;padding:13px 16px;min-height:30px;cursor:{{ row.cursor }}">
+                <div style="width:44px;flex-shrink:0;font-size:12px;color:var(--muted);font-weight:600">{{ row.date }}</div>
+                <div style="flex:1;min-width:0;display:flex;align-items:center;gap:7px"><span style="font-size:13.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ row.name }}</span><sc-if value="{{ row.isReview }}" hint-placeholder-val="{{ false }}"><span style="background:#FBEFD6;color:#A87B2E;font-size:10px;font-weight:800;padding:2px 7px;border-radius:999px;flex-shrink:0">검토 필요</span></sc-if></div>
+                <div style="width:150px;flex-shrink:0;display:flex;justify-content:center">
+                  <sc-if value="{{ row.editable }}" hint-placeholder-val="{{ true }}">
+                  <button onclick="{{ row.tagBtnClick }}" style="display:inline-flex;align-items:center;justify-content:center;gap:6px;width:128px;box-sizing:border-box;border:1px solid {{ row.tagBorder }};background:{{ row.tagBg }};border-radius:9px;padding:5px 9px;cursor:pointer">
+                    <span style="font-size:11px;font-weight:700;color:{{ row.tagColor }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ row.tag }}</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="{{ row.tagColor }}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;{{ row.chevStyle }}"><path d="M6 9l6 6 6-6"></path></svg>
+                  </button>
+                  </sc-if>
+                  <sc-if value="{{ row.notEditable }}" hint-placeholder-val="{{ false }}">
+                  <span style="display:inline-flex;align-items:center;justify-content:center;width:128px;box-sizing:border-box;font-size:11px;font-weight:700;border-radius:7px;padding:5px 9px;background:{{ row.tagBg }};color:{{ row.tagColor }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ row.tag }}</span>
+                  </sc-if>
+                </div>
+                <div style="width:104px;flex-shrink:0;text-align:right;font-size:13.5px;font-weight:800;color:{{ row.amtColor }}">{{ row.amt }}</div>
+              </div>
+              <sc-if value="{{ row.isOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:4px 16px 16px">
+                <div style="font-size:11.5px;color:var(--muted);font-weight:600;margin-bottom:10px">어떤 분류인가요?</div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;font-weight:800;color:#3E8E63">수입</span><span style="flex:1;height:1px;background:#EDE9E3"></span></div>
+                <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px">
+                  <sc-for list="{{ row.incomeOpts }}" as="opt" hint-placeholder-count="2">
+                  <button onclick="{{ opt.onPick }}" style="{{ opt.style }}"><span style="display:block;font-weight:700">{{ opt.name }}</span><sc-if value="{{ opt.hasSub }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:10px;margin-top:1px;opacity:.72">{{ opt.sub }}</span></sc-if></button>
+                  </sc-for>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;font-weight:800;color:#C9603F">지출</span><span style="flex:1;height:1px;background:#EDE9E3"></span></div>
+                <div style="display:flex;flex-wrap:wrap;gap:7px">
+                  <sc-for list="{{ row.expenseOpts }}" as="opt" hint-placeholder-count="10">
+                  <button onclick="{{ opt.onPick }}" style="{{ opt.style }}"><span style="display:block;font-weight:700">{{ opt.name }}</span><sc-if value="{{ opt.hasSub }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:10px;margin-top:1px;opacity:.72">{{ opt.sub }}</span></sc-if></button>
+                  </sc-for>
+                </div>
+              </div>
+              </sc-if>
+            </div>
+            </sc-for>
+            <div style="text-align:center;padding:12px;border-top:1px solid #F4EEE8"><span style="font-size:12.5px;font-weight:600;color:var(--accent-strong)">나머지 5건 더 보기 ▾</span></div>
+          </div>
+        </div>
+
+        <!-- 비가입: 가입 유도 배너 -->
+        <div style="margin:18px 24px;background:linear-gradient(150deg,#FBF3EF,#F8E9E0);border:1px solid #F1DACE;border-radius:16px;padding:16px 18px;display:flex;align-items:center;gap:13px">
+          <span style="width:40px;height:40px;border-radius:12px;background:#fff;border:1px solid #F1DACE;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-strong)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg></span>
+          <div style="flex:1"><div style="font-size:14px;font-weight:800">가입하면 이 내역이 저장돼요</div><div style="font-size:12px;color:var(--body)">다음 달에 또 정리하거나 다시 전달할 수 있어요. 지금 안 해도 괜찮아요.</div></div>
+          <button style="background:var(--accent);border:none;color:#fff;font-size:13px;font-weight:700;padding:11px 16px;border-radius:11px;box-shadow:0 8px 16px rgba(224,120,86,.28);flex-shrink:0">가입하고 저장</button>
+        </div>
+
+        <div style="padding:0 24px 22px"><button style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:#fff;border:none;font-size:14.5px;font-weight:700;padding:15px;border-radius:13px">세무사 검토용 패키지 만들기<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 버전 B — 가입 -->
+    <!-- ============================================================ -->
+    <div style="flex:1;min-width:540px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:13px">
+        <span style="width:26px;height:26px;border-radius:8px;background:var(--accent);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">B</span>
+        <h2 style="font-size:19px;font-weight:800;margin:0;letter-spacing:-.02em">가입 버전</h2>
+        <span style="font-size:11.5px;font-weight:700;color:var(--in);background:#E7F1EA;border-radius:999px;padding:4px 11px">로그인 상태</span>
+      </div>
+
+      <div style="background:#fff;border-radius:18px;box-shadow:0 22px 55px rgba(80,60,50,.13);border:1px solid #EBE3DC;overflow:hidden">
+        <div style="height:38px;background:#FAF6F2;border-bottom:1px solid #F0EAE4;display:flex;align-items:center;padding:0 14px;gap:8px">
+          <div style="display:flex;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:#F0B6A6"></span><span style="width:10px;height:10px;border-radius:50%;background:#F3D2A0"></span><span style="width:10px;height:10px;border-radius:50%;background:#BFD9C2"></span></div>
+          <div style="flex:1;max-width:230px;margin:0 auto;background:#fff;border:1px solid #EFE7E0;border-radius:8px;font-size:11px;color:var(--muted);padding:3px 0;text-align:center">cfotoday.kr/my</div>
+        </div>
+        <header style="display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid #F4EEE8">
+          <span style="font-size:17px;font-weight:800;letter-spacing:-.02em">오늘<span style="color:var(--accent)">경리</span></span>
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center">재</span><span style="font-size:13px;font-weight:600">김대표 님</span></div>
+        </header>
+
+        <div style="padding:22px 24px 0">
+          <div style="display:inline-flex;align-items:center;gap:6px;background:var(--accent-tint);color:var(--accent-strong);font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px;margin-bottom:11px">예상 분류 · 참고용</div>
+          <h3 style="font-size:22px;font-weight:800;letter-spacing:-.03em;margin:0 0 6px">분류 결과를 확인해주세요</h3>
+          <div style="display:inline-flex;align-items:center;gap:7px;background:#FCF6EF;border:1px solid #F0DCBE;border-radius:999px;padding:6px 13px;margin-bottom:18px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C68A2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17V7h10"></path><path d="M7 7l10 10"></path></svg>
+            <span style="font-size:13px;color:#8A6A28;font-weight:600">지난달보다 지출이 <b style="color:#A8651E">12% 늘었어요</b> · 인건비가 늘었어요</span>
+          </div>
+
+          <!-- month select + tabs -->
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap">
+            <button style="display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #E7DDD4;border-radius:11px;padding:9px 14px;font-size:14px;font-weight:800;color:var(--ink)">2025년 5월<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A39A91" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></button>
+            <div style="display:flex;gap:4px;background:#F2EAE3;border-radius:11px;padding:4px">
+              <span style="font-size:13px;font-weight:700;color:var(--ink);background:#fff;border-radius:8px;padding:7px 16px;box-shadow:0 2px 6px rgba(80,60,50,.08)">전체</span>
+              <span style="font-size:13px;font-weight:700;color:var(--muted);padding:7px 16px">수입</span>
+              <span style="font-size:13px;font-weight:700;color:var(--muted);padding:7px 16px">지출</span>
+            </div>
+          </div>
+
+          <!-- summary chips -->
+          <div style="display:flex;gap:10px;margin-bottom:14px">
+            <div style="flex:1;background:#fff;border:1px solid #EFE2DA;border-radius:13px;padding:12px 15px"><div style="font-size:11.5px;color:var(--muted);margin-bottom:3px">수입</div><div style="font-size:17px;font-weight:800;color:var(--accent-strong)">650만원</div></div>
+            <div style="flex:1;background:#fff;border:1px solid #EFE2DA;border-radius:13px;padding:12px 15px"><div style="font-size:11.5px;color:var(--muted);margin-bottom:3px">지출</div><div style="font-size:17px;font-weight:800;color:#8A8178">201만원</div></div>
+            <button onclick="{{ onRevB }}" style="{{ revCardStyleB }}"><div style="font-size:11.5px;margin-bottom:3px;color:{{ revColorB }}">검토 필요</div><div style="display:flex;align-items:center;gap:5px"><span style="font-size:17px;font-weight:800;color:{{ revColorB }}">{{ revTextB }}</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="{{ revColorB }}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></div></button>
+          </div>
+
+          <!-- list -->
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:11px">
+            <span style="font-size:14px;font-weight:800">거래 내역</span>
+            <button onclick="{{ openUpload }}" style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #E7DDD4;color:var(--accent-strong);font-size:12.5px;font-weight:700;padding:8px 13px;border-radius:10px;cursor:pointer" style-hover="border-color:var(--accent);background:var(--accent-tint)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>파일 추가</button>
+          </div>
+          <div style="background:#fff;border:1px solid #EFE2DA;border-radius:16px;overflow:hidden">
+            <sc-if value="{{ analyzing }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;align-items:center;gap:10px;padding:13px 16px;background:#FBF3EF;border-bottom:1px solid #F4EEE8">
+              <span style="width:18px;height:18px;border-radius:50%;border:2.5px solid #F2E7DE;border-top-color:var(--accent);display:inline-block;box-sizing:border-box;animation:ok-spin .8s linear infinite"></span>
+              <span style="font-size:13px;font-weight:700;color:var(--accent-strong)">새 파일을 분석하고 있어요…</span>
+            </div>
+            </sc-if>
+            <sc-for list="{{ rowsB }}" as="row" hint-placeholder-count="5">
+            <div id="{{ row.domId }}" style="border-top:{{ row.borderTop }};background:{{ row.rowBg }}">
+              <div onclick="{{ row.onClick }}" style="display:flex;align-items:center;gap:13px;padding:13px 16px;min-height:30px;cursor:{{ row.cursor }}">
+                <div style="width:44px;flex-shrink:0;font-size:12px;color:var(--muted);font-weight:600">{{ row.date }}</div>
+                <div style="flex:1;min-width:0;display:flex;align-items:center;gap:7px"><span style="font-size:13.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ row.name }}</span><sc-if value="{{ row.isReview }}" hint-placeholder-val="{{ false }}"><span style="background:#FBEFD6;color:#A87B2E;font-size:10px;font-weight:800;padding:2px 7px;border-radius:999px;flex-shrink:0">검토 필요</span></sc-if></div>
+                <div style="width:150px;flex-shrink:0;display:flex;justify-content:center">
+                  <sc-if value="{{ row.editable }}" hint-placeholder-val="{{ true }}">
+                  <button onclick="{{ row.tagBtnClick }}" style="display:inline-flex;align-items:center;justify-content:center;gap:6px;width:128px;box-sizing:border-box;border:1px solid {{ row.tagBorder }};background:{{ row.tagBg }};border-radius:9px;padding:5px 9px;cursor:pointer">
+                    <span style="font-size:11px;font-weight:700;color:{{ row.tagColor }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ row.tag }}</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="{{ row.tagColor }}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;{{ row.chevStyle }}"><path d="M6 9l6 6 6-6"></path></svg>
+                  </button>
+                  </sc-if>
+                  <sc-if value="{{ row.notEditable }}" hint-placeholder-val="{{ false }}">
+                  <span style="display:inline-flex;align-items:center;justify-content:center;width:128px;box-sizing:border-box;font-size:11px;font-weight:700;border-radius:7px;padding:5px 9px;background:{{ row.tagBg }};color:{{ row.tagColor }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ row.tag }}</span>
+                  </sc-if>
+                </div>
+                <div style="width:104px;flex-shrink:0;text-align:right;font-size:13.5px;font-weight:800;color:{{ row.amtColor }}">{{ row.amt }}</div>
+              </div>
+              <sc-if value="{{ row.isOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:4px 16px 16px">
+                <div style="font-size:11.5px;color:var(--muted);font-weight:600;margin-bottom:10px">어떤 분류인가요?</div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;font-weight:800;color:#3E8E63">수입</span><span style="flex:1;height:1px;background:#EDE9E3"></span></div>
+                <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px">
+                  <sc-for list="{{ row.incomeOpts }}" as="opt" hint-placeholder-count="2">
+                  <button onclick="{{ opt.onPick }}" style="{{ opt.style }}"><span style="display:block;font-weight:700">{{ opt.name }}</span><sc-if value="{{ opt.hasSub }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:10px;margin-top:1px;opacity:.72">{{ opt.sub }}</span></sc-if></button>
+                  </sc-for>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;font-weight:800;color:#C9603F">지출</span><span style="flex:1;height:1px;background:#EDE9E3"></span></div>
+                <div style="display:flex;flex-wrap:wrap;gap:7px">
+                  <sc-for list="{{ row.expenseOpts }}" as="opt" hint-placeholder-count="10">
+                  <button onclick="{{ opt.onPick }}" style="{{ opt.style }}"><span style="display:block;font-weight:700">{{ opt.name }}</span><sc-if value="{{ opt.hasSub }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:10px;margin-top:1px;opacity:.72">{{ opt.sub }}</span></sc-if></button>
+                  </sc-for>
+                </div>
+              </div>
+              </sc-if>
+            </div>
+            </sc-for>
+            <div style="text-align:center;padding:12px;border-top:1px solid #F4EEE8"><span style="font-size:12.5px;font-weight:600;color:var(--accent-strong)">나머지 5건 더 보기 ▾</span></div>
+          </div>
+        </div>
+
+        <!-- 가입: 유도 배너 없음 -->
+        <div style="padding:16px 24px 22px">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+            <span style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3FB27A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>수정 내용과 이 달 내역은 자동으로 저장돼요</span>
+            <button style="display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;border:none;font-size:14.5px;font-weight:700;padding:14px 22px;border-radius:13px;box-shadow:0 9px 20px rgba(224,120,86,.3);flex-shrink:0">세무사 검토용 패키지 만들기<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 모바일 버전 (390px) -->
+  <!-- ============================================================ -->
+  <div style="max-width:1180px;margin:48px auto 0">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+      <span style="width:26px;height:26px;border-radius:8px;background:var(--ink);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">📱</span>
+      <h2 style="font-size:19px;font-weight:800;margin:0;letter-spacing:-.02em">모바일 버전 (390px)</h2>
+      <span style="font-size:12.5px;color:var(--body)">데스크탑과 동일 내용 · 거래 행은 2줄 레이아웃</span>
+    </div>
+
+    <div style="display:flex;gap:40px;flex-wrap:wrap">
+
+      <!-- 모바일 A — 비가입 -->
+      <div style="flex-shrink:0">
+        <div style="font-size:12px;font-weight:700;color:#8A8178;margin-bottom:10px;letter-spacing:.02em">비가입 버전</div>
+        <div style="width:390px;background:#fff;border-radius:40px;padding:10px;box-shadow:0 22px 50px rgba(80,60,50,.16);border:1px solid #EBE3DC">
+          <div style="background:#FCF9F5;border-radius:32px;overflow:hidden">
+            <div style="height:30px;display:flex;justify-content:center;align-items:center;background:#fff"><div style="width:100px;height:7px;border-radius:5px;background:#EFE8E2"></div></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 18px 14px;background:#fff;border-bottom:1px solid #F4EEE8">
+              <span style="font-size:16px;font-weight:800;letter-spacing:-.02em">오늘<span style="color:var(--accent)">경리</span></span>
+              <span style="font-size:11px;font-weight:700;color:var(--accent-strong);background:var(--accent-tint);border-radius:999px;padding:4px 10px">가입 없이 1회</span>
+            </div>
+
+            <div style="padding:16px 16px 0">
+              <div style="display:inline-flex;align-items:center;gap:5px;background:var(--accent-tint);color:var(--accent-strong);font-size:11px;font-weight:700;padding:5px 11px;border-radius:999px;margin-bottom:10px">예상 분류 · 참고용</div>
+              <h3 style="font-size:20px;font-weight:800;letter-spacing:-.03em;margin:0 0 6px">분류 결과를 확인해주세요</h3>
+              <p style="font-size:12.5px;color:var(--body);line-height:1.55;margin:0 0 16px">미리 분류해뒀어요. <b style="color:var(--ink)">검토 필요 항목을 눌러</b> 골라주세요.</p>
+
+              <!-- month + tabs -->
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:13px">
+                <button style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #E7DDD4;border-radius:10px;padding:8px 12px;font-size:13px;font-weight:800;color:var(--ink);flex-shrink:0">2025년 5월<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A39A91" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></button>
+                <div style="flex:1;display:flex;gap:3px;background:#F2EAE3;border-radius:10px;padding:3px">
+                  <span style="flex:1;text-align:center;font-size:12px;font-weight:700;color:var(--ink);background:#fff;border-radius:7px;padding:6px 0;box-shadow:0 2px 6px rgba(80,60,50,.08)">전체</span>
+                  <span style="flex:1;text-align:center;font-size:12px;font-weight:700;color:var(--muted);padding:6px 0">수입</span>
+                  <span style="flex:1;text-align:center;font-size:12px;font-weight:700;color:var(--muted);padding:6px 0">지출</span>
+                </div>
+              </div>
+
+              <!-- summary cards -->
+              <div style="display:flex;gap:7px;margin-bottom:14px">
+                <div style="flex:1;background:#fff;border:1px solid #EFE2DA;border-radius:12px;padding:11px 11px"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">수입</div><div style="font-size:18px;font-weight:800;color:var(--accent-strong)">650만</div></div>
+                <div style="flex:1;background:#fff;border:1px solid #EFE2DA;border-radius:12px;padding:11px 11px"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">지출</div><div style="font-size:18px;font-weight:800;color:#8A8178">201만</div></div>
+                <button onclick="{{ onRevAM }}" style="{{ revCardStyleA }};flex:1;padding:11px 11px"><div style="font-size:11px;margin-bottom:4px;color:{{ revColorA }}">검토 필요</div><div style="display:flex;align-items:center;gap:3px"><span style="font-size:18px;font-weight:800;color:{{ revColorA }}">{{ revTextA }}</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="{{ revColorA }}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></div></button>
+              </div>
+            </div>
+
+            <!-- list -->
+            <div style="background:#fff;border-top:1px solid #F4EEE8;border-bottom:1px solid #F4EEE8">
+              <sc-for list="{{ rowsA }}" as="row" hint-placeholder-count="5">
+              <div id="{{ row.domIdM }}" style="border-top:{{ row.borderTop }};background:{{ row.rowBg }}">
+                <div onclick="{{ row.tagBtnClick }}" style="display:flex;align-items:center;gap:8px;padding:13px 14px;min-height:48px;box-sizing:border-box;cursor:{{ row.cursorM }}">
+                  <span style="font-size:10.5px;color:#BBB1A7;font-weight:600;flex-shrink:0;width:34px">{{ row.date }}</span>
+                  <span style="flex:1;min-width:0;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ row.name }}</span>
+                  <sc-if value="{{ row.editable }}" hint-placeholder-val="{{ true }}">
+                  <button style="display:inline-flex;align-items:center;gap:4px;border:1px solid {{ row.tagBorder }};background:{{ row.tagBg }};border-radius:8px;padding:5px 9px;cursor:pointer;flex-shrink:0"><span style="font-size:11px;font-weight:700;color:{{ row.tagColor }};white-space:nowrap">{{ row.tag }}</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="{{ row.tagColor }}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="{{ row.chevStyle }}"><path d="M6 9l6 6 6-6"></path></svg></button>
+                  </sc-if>
+                  <sc-if value="{{ row.notEditable }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-size:11px;font-weight:700;border-radius:6px;padding:5px 9px;background:{{ row.tagBg }};color:{{ row.tagColor }};white-space:nowrap;flex-shrink:0">{{ row.tag }}</span>
+                  </sc-if>
+                  <span style="width:104px;flex-shrink:0;text-align:right;font-size:15px;font-weight:800;white-space:nowrap;color:{{ row.amtColor }}">{{ row.amt }}</span>
+                </div>
+                <sc-if value="{{ row.isOpen }}" hint-placeholder-val="{{ false }}">
+                <div style="padding:2px 16px 14px">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;font-weight:800;color:#3E8E63">수입</span><span style="flex:1;height:1px;background:#EDE9E3"></span></div>
+                  <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px">
+                    <sc-for list="{{ row.incomeOpts }}" as="opt" hint-placeholder-count="2">
+                    <button onclick="{{ opt.onPick }}" style="{{ opt.style }}"><span style="display:block;font-weight:700">{{ opt.name }}</span><sc-if value="{{ opt.hasSub }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:10px;margin-top:1px;opacity:.72">{{ opt.sub }}</span></sc-if></button>
+                    </sc-for>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;font-weight:800;color:#C9603F">지출</span><span style="flex:1;height:1px;background:#EDE9E3"></span></div>
+                  <div style="display:flex;flex-wrap:wrap;gap:7px">
+                    <sc-for list="{{ row.expenseOpts }}" as="opt" hint-placeholder-count="10">
+                    <button onclick="{{ opt.onPick }}" style="{{ opt.style }}"><span style="display:block;font-weight:700">{{ opt.name }}</span><sc-if value="{{ opt.hasSub }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:10px;margin-top:1px;opacity:.72">{{ opt.sub }}</span></sc-if></button>
+                    </sc-for>
+                  </div>
+                </div>
+                </sc-if>
+              </div>
+              </sc-for>
+              <div style="text-align:center;padding:12px;border-top:1px solid #F4EEE8"><span style="font-size:12.5px;font-weight:600;color:var(--accent-strong)">나머지 5건 더 보기 ▾</span></div>
+            </div>
+
+            <!-- 비가입: 배너 -->
+            <div style="margin:16px;background:linear-gradient(150deg,#FBF3EF,#F8E9E0);border:1px solid #F1DACE;border-radius:15px;padding:14px">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:11px">
+                <span style="width:34px;height:34px;border-radius:11px;background:#fff;border:1px solid #F1DACE;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--accent-strong)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg></span>
+                <div><div style="font-size:13px;font-weight:800">가입하면 이 내역이 저장돼요</div><div style="font-size:11px;color:var(--body)">지금 안 해도 괜찮아요</div></div>
+              </div>
+              <button style="width:100%;background:var(--accent);border:none;color:#fff;font-size:13px;font-weight:700;padding:11px;border-radius:11px">가입하고 저장하기</button>
+            </div>
+
+            <div style="padding:0 16px 22px"><button style="width:100%;display:flex;align-items:center;justify-content:center;gap:7px;background:var(--ink);color:#fff;border:none;font-size:14px;font-weight:700;padding:15px;border-radius:13px">세무사 검토용 패키지 만들기<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 모바일 B — 가입 -->
+      <div style="flex-shrink:0">
+        <div style="font-size:12px;font-weight:700;color:var(--in);margin-bottom:10px;letter-spacing:.02em">가입 버전</div>
+        <div style="width:390px;background:#fff;border-radius:40px;padding:10px;box-shadow:0 22px 50px rgba(80,60,50,.16);border:1px solid #EBE3DC">
+          <div style="background:#FCF9F5;border-radius:32px;overflow:hidden">
+            <div style="height:30px;display:flex;justify-content:center;align-items:center;background:#fff"><div style="width:100px;height:7px;border-radius:5px;background:#EFE8E2"></div></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 18px 14px;background:#fff;border-bottom:1px solid #F4EEE8">
+              <span style="font-size:16px;font-weight:800;letter-spacing:-.02em">오늘<span style="color:var(--accent)">경리</span></span>
+              <div style="display:flex;align-items:center;gap:6px"><span style="width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center">재</span><span style="font-size:12px;font-weight:600">김대표 님</span></div>
+            </div>
+
+            <div style="padding:16px 16px 0">
+              <div style="display:inline-flex;align-items:center;gap:5px;background:var(--accent-tint);color:var(--accent-strong);font-size:11px;font-weight:700;padding:5px 11px;border-radius:999px;margin-bottom:10px">예상 분류 · 참고용</div>
+              <h3 style="font-size:20px;font-weight:800;letter-spacing:-.03em;margin:0 0 8px">분류 결과를 확인해주세요</h3>
+              <div style="display:inline-flex;align-items:center;gap:6px;background:#FCF6EF;border:1px solid #F0DCBE;border-radius:999px;padding:6px 12px;margin-bottom:16px">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C68A2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17V7h10"></path><path d="M7 7l10 10"></path></svg>
+                <span style="font-size:12px;color:#8A6A28;font-weight:600">지난달보다 지출 <b style="color:#A8651E">12% ↑</b> · 인건비 증가</span>
+              </div>
+
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:13px">
+                <button style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #E7DDD4;border-radius:10px;padding:8px 12px;font-size:13px;font-weight:800;color:var(--ink);flex-shrink:0">2025년 5월<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A39A91" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></button>
+                <div style="flex:1;display:flex;gap:3px;background:#F2EAE3;border-radius:10px;padding:3px">
+                  <span style="flex:1;text-align:center;font-size:12px;font-weight:700;color:var(--ink);background:#fff;border-radius:7px;padding:6px 0;box-shadow:0 2px 6px rgba(80,60,50,.08)">전체</span>
+                  <span style="flex:1;text-align:center;font-size:12px;font-weight:700;color:var(--muted);padding:6px 0">수입</span>
+                  <span style="flex:1;text-align:center;font-size:12px;font-weight:700;color:var(--muted);padding:6px 0">지출</span>
+                </div>
+              </div>
+
+              <div style="display:flex;gap:7px;margin-bottom:14px">
+                <div style="flex:1;background:#fff;border:1px solid #EFE2DA;border-radius:12px;padding:11px 11px"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">수입</div><div style="font-size:18px;font-weight:800;color:var(--accent-strong)">650만</div></div>
+                <div style="flex:1;background:#fff;border:1px solid #EFE2DA;border-radius:12px;padding:11px 11px"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">지출</div><div style="font-size:18px;font-weight:800;color:#8A8178">201만</div></div>
+                <button onclick="{{ onRevBM }}" style="{{ revCardStyleB }};flex:1;padding:11px 11px"><div style="font-size:11px;margin-bottom:4px;color:{{ revColorB }}">검토 필요</div><div style="display:flex;align-items:center;gap:3px"><span style="font-size:18px;font-weight:800;color:{{ revColorB }}">{{ revTextB }}</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="{{ revColorB }}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></div></button>
+              </div>
+            </div>
+
+            <div style="background:#fff;border-top:1px solid #F4EEE8;border-bottom:1px solid #F4EEE8">
+              <sc-for list="{{ rowsB }}" as="row" hint-placeholder-count="5">
+              <div id="{{ row.domIdM }}" style="border-top:{{ row.borderTop }};background:{{ row.rowBg }}">
+                <div onclick="{{ row.tagBtnClick }}" style="display:flex;align-items:center;gap:8px;padding:13px 14px;min-height:48px;box-sizing:border-box;cursor:{{ row.cursorM }}">
+                  <span style="font-size:10.5px;color:#BBB1A7;font-weight:600;flex-shrink:0;width:34px">{{ row.date }}</span>
+                  <span style="flex:1;min-width:0;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ row.name }}</span>
+                  <sc-if value="{{ row.editable }}" hint-placeholder-val="{{ true }}">
+                  <button style="display:inline-flex;align-items:center;gap:4px;border:1px solid {{ row.tagBorder }};background:{{ row.tagBg }};border-radius:8px;padding:5px 9px;cursor:pointer;flex-shrink:0"><span style="font-size:11px;font-weight:700;color:{{ row.tagColor }};white-space:nowrap">{{ row.tag }}</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="{{ row.tagColor }}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="{{ row.chevStyle }}"><path d="M6 9l6 6 6-6"></path></svg></button>
+                  </sc-if>
+                  <sc-if value="{{ row.notEditable }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-size:11px;font-weight:700;border-radius:6px;padding:5px 9px;background:{{ row.tagBg }};color:{{ row.tagColor }};white-space:nowrap;flex-shrink:0">{{ row.tag }}</span>
+                  </sc-if>
+                  <span style="width:104px;flex-shrink:0;text-align:right;font-size:15px;font-weight:800;white-space:nowrap;color:{{ row.amtColor }}">{{ row.amt }}</span>
+                </div>
+                <sc-if value="{{ row.isOpen }}" hint-placeholder-val="{{ false }}">
+                <div style="padding:2px 16px 14px">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;font-weight:800;color:#3E8E63">수입</span><span style="flex:1;height:1px;background:#EDE9E3"></span></div>
+                  <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px">
+                    <sc-for list="{{ row.incomeOpts }}" as="opt" hint-placeholder-count="2">
+                    <button onclick="{{ opt.onPick }}" style="{{ opt.style }}"><span style="display:block;font-weight:700">{{ opt.name }}</span><sc-if value="{{ opt.hasSub }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:10px;margin-top:1px;opacity:.72">{{ opt.sub }}</span></sc-if></button>
+                    </sc-for>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span style="font-size:11px;font-weight:800;color:#C9603F">지출</span><span style="flex:1;height:1px;background:#EDE9E3"></span></div>
+                  <div style="display:flex;flex-wrap:wrap;gap:7px">
+                    <sc-for list="{{ row.expenseOpts }}" as="opt" hint-placeholder-count="10">
+                    <button onclick="{{ opt.onPick }}" style="{{ opt.style }}"><span style="display:block;font-weight:700">{{ opt.name }}</span><sc-if value="{{ opt.hasSub }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:10px;margin-top:1px;opacity:.72">{{ opt.sub }}</span></sc-if></button>
+                    </sc-for>
+                  </div>
+                </div>
+                </sc-if>
+              </div>
+              </sc-for>
+              <div style="text-align:center;padding:12px;border-top:1px solid #F4EEE8"><span style="font-size:12.5px;font-weight:600;color:var(--accent-strong)">나머지 5건 더 보기 ▾</span></div>
+            </div>
+
+            <!-- 가입: 자동 저장 안내 + CTA -->
+            <div style="padding:14px 16px 22px">
+              <div style="display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--muted);margin-bottom:11px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3FB27A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>수정 내용과 이 달 내역은 자동 저장돼요</div>
+              <button style="width:100%;display:flex;align-items:center;justify-content:center;gap:7px;background:var(--accent);color:#fff;border:none;font-size:14px;font-weight:700;padding:15px;border-radius:13px;box-shadow:0 9px 18px rgba(224,120,86,.3)">세무사 검토용 패키지 만들기<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== 파일 추가 업로드 모달 (공통) ===== -->
+  <sc-if value="{{ uploadOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:24px">
+    <div onclick="{{ closeUpload }}" style="position:absolute;inset:0;background:rgba(42,36,32,.4)"></div>
+    <div style="position:relative;width:420px;max-width:100%;background:#fff;border-radius:20px;padding:26px 26px 24px;box-shadow:0 24px 60px rgba(80,60,50,.28)">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+        <h3 style="font-size:18px;font-weight:800;letter-spacing:-.02em;margin:0">파일 추가하기</h3>
+        <button onclick="{{ closeUpload }}" style="width:30px;height:30px;border-radius:9px;background:#F2EAE3;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6F665E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"></path></svg></button>
+      </div>
+      <p style="font-size:13px;color:var(--body);margin:0 0 18px">통장·카드·영수증 파일을 추가하면 기존 내역에 합쳐서 정리해드려요.</p>
+
+      <sc-if value="{{ analyzing }}" hint-placeholder-val="{{ false }}">
+      <div style="border:2px dashed #E8C3B2;background:#FBF3EF;border-radius:18px;padding:38px 24px;text-align:center">
+        <span style="width:40px;height:40px;border-radius:50%;border:3px solid #F2E7DE;border-top-color:var(--accent);display:inline-block;box-sizing:border-box;animation:ok-spin .8s linear infinite;margin-bottom:14px"></span>
+        <div style="font-size:15px;font-weight:800;color:var(--accent-strong)">분석 중…</div>
+        <div style="font-size:12.5px;color:var(--body);margin-top:4px">새 거래를 분류하고 있어요</div>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ uploadIdle }}" hint-placeholder-val="{{ true }}">
+      <div style="border:2px dashed #E8C3B2;background:#FBF3EF;border-radius:18px;padding:30px 24px;text-align:center">
+        <div style="width:54px;height:54px;border-radius:17px;background:var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 13px;box-shadow:0 8px 16px rgba(224,120,86,.3)"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V5"></path><path d="M7 10l5-5 5 5"></path><path d="M5 19h14"></path></svg></div>
+        <div style="font-size:14.5px;font-weight:800;margin-bottom:4px">여기에 파일을 던지세요</div>
+        <div style="font-size:12px;color:var(--body);margin-bottom:16px">통장 엑셀 · 카드 내역 · 영수증</div>
+        <button onclick="{{ doUpload }}" style="background:var(--accent);color:#fff;border:none;font-size:14px;font-weight:700;padding:12px 24px;border-radius:12px;box-shadow:0 8px 16px rgba(224,120,86,.3);cursor:pointer">파일 선택하기</button>
+      </div>
+      </sc-if>
+    </div>
+  </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  state = { open: null, cats: {}, uploadOpen:false, analyzing:false, extra:[] };
+
+  openUpload(){ this.setState({ uploadOpen:true }); }
+  closeUpload(){ if(!this.state.analyzing) this.setState({ uploadOpen:false }); }
+  doUpload(){
+    this.setState({ analyzing:true });
+    setTimeout(()=>{ this.setState(s=>({ analyzing:false, uploadOpen:false, extra:[...s.extra,
+      { date:'05.28', name:'배달 정산 입금 (추가)', amount:540000, base:'매출', editable:false, review:false },
+      { date:'05.29', name:'택시비 (추가)', amount:-18000, base:'기타 지출', editable:true, review:true },
+    ] })); }, 1600);
+  }
+
+  INCOME_OPTS = [
+    { name:'매출', sub:'제품·서비스' },
+    { name:'기타 수입', sub:'' },
+  ];
+  EXPENSE_OPTS = [
+    { name:'인건비', sub:'급여·알바' },
+    { name:'임차료', sub:'사무실·주차' },
+    { name:'복리후생비', sub:'식대·커피·회식' },
+    { name:'외주비', sub:'프리랜서·에이전시' },
+    { name:'광고·마케팅비', sub:'' },
+    { name:'소프트웨어 구독료', sub:'' },
+    { name:'교통·출장비', sub:'' },
+    { name:'사무용품·소모품', sub:'' },
+    { name:'세금·공과금', sub:'' },
+    { name:'기타 지출', sub:'' },
+  ];
+
+  DEFS = [
+    { date:'05.03', name:'○○마트 정기 납품', amount:3800000,  base:'매출',   editable:false, review:false },
+    { date:'05.08', name:'5월 아르바이트 급여', amount:-950000, base:'인건비', editable:false, review:false },
+    { date:'05.10', name:'사무실 임대료',     amount:-550000,  base:'임차료', editable:false, review:false },
+    { date:'05.15', name:'스타벅스 강남점',   amount:-38000,   base:'기타 지출', editable:true, review:true },
+    { date:'05.24', name:'홍길동',           amount:-200000,  base:'기타 지출', editable:true, review:true },
+  ];
+
+  catStyle(cat){
+    if(cat==='매출' || cat==='기타 수입') return { bg:'#E7F1EA', color:'#3E8E63', border:'#BFE0CB' };
+    if(cat==='인건비' || cat==='임차료' || cat==='복리후생비' || cat==='외주비') return { bg:'#FBEDE6', color:'#C9603F', border:'#F0CDBC' };
+    return { bg:'#FBF1E0', color:'#A87B2E', border:'#EAD6A8' };
+  }
+  buildOpts(list, cat, key){
+    return list.map(o=>{
+      const sel = o.name === cat;
+      const base = 'border:1px solid;border-radius:9px;padding:7px 11px;font-size:12.5px;cursor:pointer;text-align:left;line-height:1.2;';
+      return { name:o.name, sub:o.sub, hasSub:!!o.sub, onPick: ()=>this.pick(key, o.name),
+        style: sel ? base+'background:var(--accent);border-color:var(--accent);color:#fff'
+                   : base+'background:#FAF6F2;border-color:#EAE0D7;color:#5C544C' };
+    });
+  }
+  fmtWon(a){ return (a>0?'+':'-') + '₩' + Math.abs(a).toLocaleString('ko-KR'); }
+
+  toggle(key){ this.setState(s=>({ open: s.open===key ? null : key })); }
+  pick(key, cat){ this.setState(s=>({ cats: { ...s.cats, [key]: cat }, open: null })); }
+
+  scrollTo(id){
+    const el = document.getElementById(id);
+    if(!el) return;
+    const y = el.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top:y, behavior:'smooth' });
+    el.style.transition = 'box-shadow .25s';
+    el.style.boxShadow = 'inset 0 0 0 2px var(--accent)';
+    setTimeout(()=>{ el.style.boxShadow = ''; }, 1000);
+  }
+
+  buildRows(v){
+    return this.DEFS.concat(this.state.extra).map((d,i)=>{
+      const key = v + i;
+      const chosen = this.state.cats[key];
+      const isReview = d.review && !chosen;
+      const cat = chosen || d.base;
+      const cs = isReview ? { bg:'#FCE3B8', color:'#9A6516', border:'#E8C078' } : this.catStyle(cat);
+      const isOpen = this.state.open === key;
+      return {
+        domId: v + '-r' + i,
+        domIdM: 'm' + v + '-r' + i,
+        cursorM: d.editable ? 'pointer' : 'default',
+        date: d.date, name: d.name,
+        amt: this.fmtWon(d.amount),
+        amtColor: d.amount>0 ? '#3E8E63' : 'var(--out)',
+        tag: cat, tagBg: cs.bg, tagColor: cs.color, tagBorder: cs.border,
+        isReview, editable: d.editable, notEditable: !d.editable,
+        rowBg: isReview ? '#FFFBF4' : 'transparent',
+        borderTop: i===0 ? 'none' : '1px solid #F4EEE8',
+        cursor: 'default',
+        onClick: (()=>{}),
+        tagBtnClick: d.editable ? ()=>this.toggle(key) : (()=>{}),
+        isOpen,
+        chevStyle: isOpen ? 'transform:rotate(180deg);transition:transform .15s' : 'transition:transform .15s',
+        incomeOpts: d.editable ? this.buildOpts(this.INCOME_OPTS, cat, key) : [],
+        expenseOpts: d.editable ? this.buildOpts(this.EXPENSE_OPTS, cat, key) : [],
+      };
+    });
+  }
+
+  reviewMeta(v){
+    const n = this.DEFS.reduce((acc,d,i)=> acc + ((d.review && !this.state.cats[v+i]) ? 1 : 0), 0);
+    const done = n===0;
+    const color = done ? '#3E8E63' : '#A87B2E';
+    const base = 'text-align:left;border-radius:13px;padding:12px 15px;cursor:pointer;';
+    const style = done
+      ? base + 'background:#EEF6F0;border:1px solid #BFE0CB'
+      : base + 'background:#FCF6EF;border:1px solid #EAC79B';
+    let firstId = null;
+    for(let i=0;i<this.DEFS.length;i++){ if(this.DEFS[i].review && !this.state.cats[v+i]){ firstId = v+'-r'+i; break; } }
+    return {
+      text: done ? '완료' : (n+'건'),
+      color, style,
+      onClick: ()=>{ if(firstId) this.scrollTo(firstId); },
+      onClickM: ()=>{ if(firstId) this.scrollTo('m'+firstId); },
+    };
+  }
+
+  renderVals(){
+    const a = this.reviewMeta('A');
+    const b = this.reviewMeta('B');
+    return {
+      rowsA: this.buildRows('A'),
+      rowsB: this.buildRows('B'),
+      revTextA: a.text, revColorA: a.color, revCardStyleA: a.style, onRevA: a.onClick, onRevAM: a.onClickM,
+      revTextB: b.text, revColorB: b.color, revCardStyleB: b.style, onRevB: b.onClick, onRevBM: b.onClickM,
+      uploadOpen: this.state.uploadOpen,
+      analyzing: this.state.analyzing,
+      uploadIdle: !this.state.analyzing,
+      openUpload: ()=>this.openUpload(),
+      closeUpload: ()=>this.closeUpload(),
+      doUpload: ()=>this.doUpload(),
+    };
+  }
+}
+</script>
+
+
+</body></html>
