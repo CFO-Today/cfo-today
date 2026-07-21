@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><title>gate test</title></head>
+<body><pre id="out">running…</pre>
+<script type="module">
+import {
+  safeEqual, hmac, issueToken, verifyToken, readCookie, safeNext,
+  escapeHtml, loginPage, setupPage, MAX_AGE, COOKIE,
+} from "./gate.js";
+
+const log = [];
+let pass = 0, fail = 0;
+function check(name, cond) {
+  (cond ? pass++ : fail++);
+  log.push((cond ? "PASS  " : "FAIL  ") + name);
+}
+
+const PW = "test-passphrase";
+const SECRET = "some-signing-secret";
+
+// safeEqual
+check("safeEqual 같은 값", safeEqual(PW, "test-passphrase") === true);
+check("safeEqual 다른 값", safeEqual(PW, "test-passphrasX") === false);
+check("safeEqual 길이 다름", safeEqual(PW, "test-passphrase2") === false);
+check("safeEqual 빈 문자열 vs 값", safeEqual("", PW) === false);
+check("safeEqual null 방어", safeEqual(null, PW) === false);
+check("safeEqual undefined 방어", safeEqual(undefined, undefined) === false);
+
+// hmac 결정성
+const h1 = await hmac(SECRET, "abc");
+const h2 = await hmac(SECRET, "abc");
+const h3 = await hmac("다른키", "abc");
+check("hmac 결정적", h1 === h2);
+check("hmac 64자 hex", /^[0-9a-f]{64}$/.test(h1));
+check("hmac 키가 다르면 다름", h1 !== h3);
+
+// 토큰 왕복
+const now = Date.now();
+const token = await issueToken(SECRET, now);
+check("발급 토큰 형식", /^\d+\.[0-9a-f]{64}$/.test(token));
+check("정상 토큰 통과", (await verifyToken(SECRET, token, now)) === true);
+
+// 위조 시도
+const [exp, sig] = token.split(".");
+check("서명 위조 거부",
+  (await verifyToken(SECRET, exp + "." + sig.replace(/.$/, (c) => c === "a" ? "b" : "a"), now)) === false);
+check("만료시각 조작 거부", (await verifyToken(SECRET, (Number(exp) + 1) + "." + sig, now)) === false);
+check("다른 비밀키 거부", (await verifyToken("wrong-secret", token, now)) === false);
+check("만료된 토큰 거부",
+  (await verifyToken(SECRET, token, now + MAX_AGE * 1000 + 1000)) === false);
+check("만료 직전 통과",
+  (await verifyToken(SECRET, token, now + MAX_AGE * 1000 - 1000)) === true);
+check("빈 토큰 거부", (await verifyToken(SECRET, "", now)) === false);
+check("null 토큰 거부", (await verifyToken(SECRET, null, now)) === false);
+check("점 없는 토큰 거부", (await verifyToken(SECRET, "garbage", now)) === false);
+check("숫자 아닌 exp 거부", (await verifyToken(SECRET, "abc." + sig, now)) === false);
+check("서명만 있는 토큰 거부", (await verifyToken(SECRET, "." + sig, now)) === false);
+
+// 쿠키 파싱
+check("쿠키 단일", readCookie("ok_gate=abc", "ok_gate") === "abc");
+check("쿠키 다중", readCookie("a=1; ok_gate=abc; b=2", "ok_gate") === "abc");
+check("쿠키 공백 처리", readCookie("a=1;   ok_gate=abc", "ok_gate") === "abc");
+check("쿠키 없음", readCookie("a=1; b=2", "ok_gate") === null);
+check("쿠키 헤더 없음", readCookie(null, "ok_gate") === null);
+check("부분일치 오탐 방지", readCookie("xok_gate=nope", "ok_gate") === null);
+
+// 오픈 리다이렉트 방어
+check("내부 경로 허용", safeNext("/dashboard.html") === "/dashboard.html");
+check("쿼리 포함 허용", safeNext("/a.html?x=1") === "/a.html?x=1");
+check("//evil.com 차단", safeNext("//evil.com") === "/");
+check("절대 URL 차단", safeNext("https://evil.com") === "/");
+check("백슬래시 차단", safeNext("/\\evil.com") === "/");
+check("상대경로 차단", safeNext("dashboard.html") === "/");
+check("빈 값 기본값", safeNext("") === "/");
+
+// XSS 방어 — next 값이 HTML에 그대로 들어가지 않아야 한다
+const evil = '"><script>alert(1)</scr' + 'ipt>';
+const page = loginPage(evil, false);
+check("next 값 이스케이프됨", !page.includes('"><script>'));
+check("이스케이프 결과 포함", page.includes(escapeHtml(evil)));
+check("로그인 폼 존재", page.includes('action="/__gate"') && page.includes('name="password"'));
+check("실패 메시지 조건부", loginPage("/", true).includes("맞지 않아요")
+                        && !loginPage("/", false).includes("맞지 않아요"));
+check("setupPage 안내 포함", setupPage().includes("SITE_PASSWORD"));
+check("noindex 설정", page.includes("noindex"));
+
+log.push("");
+log.push(`총 ${pass + fail}개 · 통과 ${pass} · 실패 ${fail}`);
+document.getElementById("out").textContent = log.join("\n");
+document.title = fail === 0 ? "ALL PASS" : "HAS FAILURE";
+</script>
+</body></html>

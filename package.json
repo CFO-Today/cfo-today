@@ -1,0 +1,10 @@
+{
+  "name": "cfo-today",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "오늘경리 정적 사이트",
+  "dependencies": {
+    "@vercel/functions": "^3.7.5"
+  }
+}

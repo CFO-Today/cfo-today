@@ -1,6 +1,9 @@
-# 원본 Claude Design 번들과 추출 소스 (참고용, 217MB)
+﻿# 원본 Claude Design 번들과 추출 소스 (참고용, 217MB)
 # 사이트 어디에서도 참조하지 않으므로 배포에서 제외한다.
 design/
 
 # 에디터 · 로컬 설정
 .claude/
+
+# 게이트 로직 테스트 (브라우저에서 수동 실행)
+gate.test.html
